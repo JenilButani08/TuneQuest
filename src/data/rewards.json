@@ -1,0 +1,183 @@
+{
+  "wallet": {
+    "balance": 1240,
+    "thisWeekEarned": 320,
+    "lifetimeEarned": 8420,
+    "lifetimeRedeemed": 5000,
+    "currencyName": "TunePoints",
+    "currencySymbol": "TP"
+  },
+  "rewards": [
+    {
+      "id": "rew-1day",
+      "title": "1-Day Premium Pass",
+      "description": "Unlock 24 hours of ad-free listening, lossless audio, and unlimited track skips.",
+      "costPoints": 100,
+      "durationDays": 1,
+      "category": "premium",
+      "icon": "Zap",
+      "unlockedFeatures": [
+        "Ad-free streaming",
+        "Unlimited skips",
+        "320kbps High Quality",
+        "Offline mode support"
+      ],
+      "bannerGradient": "from-purple-600 to-indigo-600"
+    },
+    {
+      "id": "rew-3day",
+      "title": "3-Day Premium Weekend",
+      "description": "Perfect for long weekend listening sessions without interruptions.",
+      "costPoints": 250,
+      "durationDays": 3,
+      "category": "premium",
+      "icon": "Sparkles",
+      "unlockedFeatures": [
+        "Ad-free listening",
+        "Unlimited skips",
+        "Lossless 320kbps",
+        "Full quiz audio snippets"
+      ],
+      "bannerGradient": "from-indigo-600 to-cyan-600"
+    },
+    {
+      "id": "rew-7day",
+      "title": "7-Day Premium Elite",
+      "description": "A full week of complete access to all TuneQuest VIP listening features.",
+      "costPoints": 500,
+      "durationDays": 7,
+      "category": "premium",
+      "popular": true,
+      "icon": "Crown",
+      "unlockedFeatures": [
+        "Ad-free experience",
+        "Unlimited skips",
+        "FLAC Studio Quality",
+        "Priority leaderboard ranking"
+      ],
+      "bannerGradient": "from-fuchsia-600 to-purple-600"
+    },
+    {
+      "id": "rew-30day",
+      "title": "30-Day Pro Master Pass",
+      "description": "The ultimate monthly audio subscription fully funded by your music trivia knowledge.",
+      "costPoints": 1500,
+      "durationDays": 30,
+      "category": "premium",
+      "icon": "Award",
+      "unlockedFeatures": [
+        "Everything in 7-Day",
+        "Custom profile themes",
+        "Exclusive discord role",
+        "VIP tournament entry"
+      ],
+      "bannerGradient": "from-amber-500 to-rose-600"
+    },
+    {
+      "id": "rew-golden-skin",
+      "title": "Neon Cyber Player Skin",
+      "description": "Cosmetic player upgrade with electric purple audio wave visualizers and glowing border.",
+      "costPoints": 800,
+      "category": "cosmetic",
+      "icon": "Radio",
+      "unlockedFeatures": [
+        "Special player border glow",
+        "Animated spectrum bars",
+        "Golden verified badge"
+      ],
+      "bannerGradient": "from-cyan-500 to-blue-600"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-ref-001",
+      "type": "REFERRAL_BONUS",
+      "amount": 100,
+      "description": "Referral bonus: Sam K. joined TuneQuest",
+      "timestamp": "2025-02-24T12:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "tx-001",
+      "type": "QUIZ_REWARD",
+      "amount": 10,
+      "description": "Quiz: Guess the Artist",
+      "timestamp": "2025-02-23T14:32:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "tx-002",
+      "type": "DAILY_CHALLENGE",
+      "amount": 50,
+      "description": "Daily Music Challenge Completion",
+      "timestamp": "2025-02-23T10:15:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "tx-003",
+      "type": "redemption",
+      "amount": -500,
+      "description": "Redeemed 7-Day Premium Pass",
+      "timestamp": "2025-02-22T19:40:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "tx-004",
+      "type": "achievement",
+      "amount": 100,
+      "description": "Unlocked Badge: Quiz Addict (7-Day Streak)",
+      "timestamp": "2025-02-21T09:20:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "tx-005",
+      "type": "quiz_reward",
+      "amount": 10,
+      "description": "Quiz: Audio Challenge",
+      "timestamp": "2025-02-20T17:10:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "tx-006",
+      "type": "redemption",
+      "amount": -100,
+      "description": "Redeemed 1-Day Premium Pass",
+      "timestamp": "2025-02-18T11:05:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "tx-007",
+      "type": "bonus",
+      "amount": 150,
+      "description": "Weekly Top 50 Leaderboard Reward",
+      "timestamp": "2025-02-17T00:00:00Z",
+      "status": "completed"
+    }
+  ],
+  "tiers": [
+    {
+      "id": "tier-bronze",
+      "name": "Bronze Explorer",
+      "minPoints": 0,
+      "multiplier": 1
+    },
+    {
+      "id": "tier-silver",
+      "name": "Silver Virtuoso",
+      "minPoints": 1000,
+      "multiplier": 1.2
+    },
+    {
+      "id": "tier-gold",
+      "name": "Gold Maestro",
+      "minPoints": 3000,
+      "multiplier": 1.5
+    },
+    {
+      "id": "tier-diamond",
+      "name": "Diamond Legend",
+      "minPoints": 10000,
+      "multiplier": 2
+    }
+  ]
+}

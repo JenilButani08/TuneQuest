@@ -1,0 +1,118 @@
+{
+  "genres": [
+    {
+      "id": "synthwave",
+      "name": "Synthwave & Retro",
+      "color": "from-purple-600 to-indigo-900",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop&q=80",
+      "songCount": 42
+    },
+    {
+      "id": "lofi",
+      "name": "Lo-Fi & Chillhop",
+      "color": "from-amber-600 to-rose-900",
+      "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&auto=format&fit=crop&q=80",
+      "songCount": 38
+    },
+    {
+      "id": "cyber",
+      "name": "Cyber Electro & Midtempo",
+      "color": "from-cyan-600 to-blue-950",
+      "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&auto=format&fit=crop&q=80",
+      "songCount": 29
+    },
+    {
+      "id": "bollywood",
+      "name": "Bollywood & Raga Fusion",
+      "color": "from-orange-600 to-amber-900",
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&auto=format&fit=crop&q=80",
+      "songCount": 35
+    },
+    {
+      "id": "indie",
+      "name": "Indie Pop & Dreamwave",
+      "color": "from-pink-600 to-purple-950",
+      "image": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400&auto=format&fit=crop&q=80",
+      "songCount": 51
+    },
+    {
+      "id": "house",
+      "name": "Deep House & Minimal",
+      "color": "from-emerald-600 to-teal-950",
+      "image": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=400&auto=format&fit=crop&q=80",
+      "songCount": 46
+    },
+    {
+      "id": "afro",
+      "name": "Afro-Beats & Highlife",
+      "color": "from-yellow-600 to-red-950",
+      "image": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&auto=format&fit=crop&q=80",
+      "songCount": 33
+    },
+    {
+      "id": "ambient",
+      "name": "Ambient Space & Drone",
+      "color": "from-blue-600 to-slate-900",
+      "image": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=400&auto=format&fit=crop&q=80",
+      "songCount": 24
+    }
+  ],
+  "activities": [
+    {
+      "id": "workout",
+      "name": "Workout & Fitness",
+      "description": "High-BPM heavy bass to shatter personal bests",
+      "image": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&auto=format&fit=crop&q=80",
+      "color": "from-red-600 to-orange-700",
+      "tag": "High Energy"
+    },
+    {
+      "id": "study",
+      "name": "Deep Study & Code",
+      "description": "Zero distractions, mellow vinyl grooves for flow",
+      "image": "https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=500&auto=format&fit=crop&q=80",
+      "color": "from-indigo-600 to-purple-800",
+      "tag": "Flow State"
+    },
+    {
+      "id": "chill",
+      "name": "Chill & Unwind",
+      "description": "Gentle melodies to decompress after a long day",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=80",
+      "color": "from-teal-600 to-cyan-900",
+      "tag": "Relaxation"
+    },
+    {
+      "id": "party",
+      "name": "Weekend Party",
+      "description": "Festival bangers and unstoppable dancefloor rhythm",
+      "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&auto=format&fit=crop&q=80",
+      "color": "from-fuchsia-600 to-pink-800",
+      "tag": "Upbeat"
+    },
+    {
+      "id": "focus",
+      "name": "Binaural Focus",
+      "description": "Harmonic 432Hz ambient soundscapes",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format&fit=crop&q=80",
+      "color": "from-blue-600 to-indigo-900",
+      "tag": "Cognitive"
+    },
+    {
+      "id": "sleep",
+      "name": "Sleep & Nightscape",
+      "description": "Delta-wave calm to lull you into deep rest",
+      "image": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format&fit=crop&q=80",
+      "color": "from-slate-700 to-purple-950",
+      "tag": "Deep Rest"
+    },
+    {
+      "id": "travel",
+      "name": "Wanderlust & Travel",
+      "description": "Soundtracks for train rides, flights, and open highways",
+      "image": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=500&auto=format&fit=crop&q=80",
+      "color": "from-amber-600 to-emerald-800",
+      "tag": "Exploration"
+    }
+  ]
+}

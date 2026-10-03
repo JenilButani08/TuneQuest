@@ -1,0 +1,41 @@
+[
+  {
+    "signupId": "sgn_1739500000000",
+    "userId": "usr_music_explorer_01",
+    "email": "explorer@tunequest.app",
+    "fullName": "Alex Rivers",
+    "username": "MusicExplorer",
+    "role": "admin_demo",
+    "signupDate": "2025-01-15T10:00:00Z",
+    "referralCodeUsed": null,
+    "startingPoints": 0,
+    "authProvider": "credentials",
+    "status": "verified"
+  },
+  {
+    "signupId": "sgn_1739800000000",
+    "userId": "usr_music_listener_02",
+    "email": "elena@tunequest.app",
+    "fullName": "Elena Rostova",
+    "username": "BeatSeeker",
+    "role": "user",
+    "signupDate": "2025-01-20T14:30:00Z",
+    "referralCodeUsed": "TUNE-A7K92X",
+    "startingPoints": 50,
+    "authProvider": "credentials",
+    "status": "verified"
+  },
+  {
+    "signupId": "sgn_1731200000000",
+    "userId": "usr_music_listener_03",
+    "email": "marcus@tunequest.app",
+    "fullName": "Marcus Vance",
+    "username": "NeonRider",
+    "role": "vip_user",
+    "signupDate": "2024-11-10T08:00:00Z",
+    "referralCodeUsed": null,
+    "startingPoints": 0,
+    "authProvider": "credentials",
+    "status": "verified"
+  }
+]

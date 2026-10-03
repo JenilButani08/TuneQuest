@@ -1,0 +1,1700 @@
+{
+  "categories": [
+    {
+      "id": "user-preferences",
+      "name": "My Preferences Gauntlet",
+      "description": "Personalized 5-question arena tailored to your favorite genres and artists. Dynamic & shuffled every round!",
+      "iconName": "Sparkles",
+      "accentColor": "#F59E0B",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 30,
+      "timeLimitSeconds": 30,
+      "difficulty": "Medium",
+      "badge": "★ Personalized For You"
+    },
+    {
+      "id": "guess-song",
+      "name": "Guess the Song",
+      "description": "Listen to short instrumental riffs or read snippets to name the track.",
+      "iconName": "Music",
+      "accentColor": "#8B5CF6",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 30,
+      "difficulty": "Easy",
+      "badge": "Popular"
+    },
+    {
+      "id": "guess-artist",
+      "name": "Guess the Artist",
+      "description": "Identify legendary creators from albums, lyrics, and production styles.",
+      "iconName": "Users",
+      "accentColor": "#06B6D4",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 30,
+      "difficulty": "Medium",
+      "badge": "Trending"
+    },
+    {
+      "id": "audio-challenge",
+      "name": "Audio Challenge",
+      "description": "Listen to the 10-second sound clip and name the melody or instrument.",
+      "iconName": "Headphones",
+      "accentColor": "#EC4899",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 20,
+      "difficulty": "Hard",
+      "badge": "Interactive Audio"
+    },
+    {
+      "id": "album-challenge",
+      "name": "Album Challenge",
+      "description": "Test your visual memory for iconic cover art and release timelines.",
+      "iconName": "Disc",
+      "accentColor": "#10B981",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 30,
+      "difficulty": "Medium",
+      "badge": "Visual Trivia"
+    },
+    {
+      "id": "lyrics-challenge",
+      "name": "Lyrics Challenge",
+      "description": "Fill in missing words and decipher memorable songwriting verses.",
+      "iconName": "FileText",
+      "accentColor": "#F59E0B",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 25,
+      "difficulty": "Medium",
+      "badge": "Wordplay"
+    },
+    {
+      "id": "genre-challenge",
+      "name": "Genre Master",
+      "description": "Explore the evolution of Synthwave, Afro-Beats, Lo-Fi, and Fusion.",
+      "iconName": "Radio",
+      "accentColor": "#8B5CF6",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 30,
+      "difficulty": "Hard",
+      "badge": "Deep Knowledge"
+    },
+    {
+      "id": "music-history",
+      "name": "Music History & Tech",
+      "description": "Synthesizer breakthroughs, vinyl era milestones, and Grammy history.",
+      "iconName": "History",
+      "accentColor": "#6366F1",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 45,
+      "difficulty": "Master",
+      "badge": "High XP"
+    },
+    {
+      "id": "trending-music",
+      "name": "Trending Music Radar",
+      "description": "Stay ahead with the viral hits taking over charts this season.",
+      "iconName": "Flame",
+      "accentColor": "#F97316",
+      "questionCount": 5,
+      "rewardPoints": 50,
+      "rewardXp": 25,
+      "timeLimitSeconds": 30,
+      "difficulty": "Easy",
+      "badge": "Fresh"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-1",
+      "categoryId": "guess-artist",
+      "question": "Which pioneering synthwave act produced the critically acclaimed album \"Cyber Horizon\"?",
+      "albumArtwork": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-1-a",
+          "text": "Solaris Wave"
+        },
+        {
+          "id": "opt-1-b",
+          "text": "Kroma Sector"
+        },
+        {
+          "id": "opt-1-c",
+          "text": "Luna Eclipse"
+        },
+        {
+          "id": "opt-1-d",
+          "text": "Marcus Thorne"
+        }
+      ],
+      "correctOptionId": "opt-1-a",
+      "explanation": "Solaris Wave produced \"Cyber Horizon\" in early 2024 using analog tape machines and retro synthesizers."
+    },
+    {
+      "id": "q-2",
+      "categoryId": "audio-challenge",
+      "question": "Listen closely to this atmospheric groove. Which genre does this track represent?",
+      "snippet": "Audio Preview (Press play below to hear the 10-second sample)",
+      "audioPreviewUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+      "albumArtwork": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-2-a",
+          "text": "Lo-fi Chill"
+        },
+        {
+          "id": "opt-2-b",
+          "text": "Death Metal"
+        },
+        {
+          "id": "opt-2-c",
+          "text": "Hardstyle Techno"
+        },
+        {
+          "id": "opt-2-d",
+          "text": "Bluegrass Acoustic"
+        }
+      ],
+      "correctOptionId": "opt-2-a",
+      "explanation": "The track \"Midnight Reverie\" by Luna Eclipse features soft vinyl crackle and mellow electric piano characteristic of Lo-fi Chill."
+    },
+    {
+      "id": "q-3",
+      "categoryId": "guess-song",
+      "question": "Which high-octane electronic track opens with the lyric: \"Synchronize the pulse / Feel the static burn the wires\"?",
+      "albumArtwork": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-3-a",
+          "text": "Raindrop Coffee Shop"
+        },
+        {
+          "id": "opt-3-b",
+          "text": "Quantum Pulse"
+        },
+        {
+          "id": "opt-3-c",
+          "text": "Cosmic Drift"
+        },
+        {
+          "id": "opt-3-d",
+          "text": "Golden Sunset Mirage"
+        }
+      ],
+      "correctOptionId": "opt-3-b",
+      "explanation": "\"Quantum Pulse\" by Kroma Sector peaked on the Global Cyberpunk leaderboards with over 230,000 streams."
+    },
+    {
+      "id": "q-4",
+      "categoryId": "album-challenge",
+      "question": "Which instrument is heavily blended with electronic 808s in Aria Sharma's landmark album \"Sitar in the City\"?",
+      "albumArtwork": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-4-a",
+          "text": "Bagpipes"
+        },
+        {
+          "id": "opt-4-b",
+          "text": "Acoustic Sitar & Sarod"
+        },
+        {
+          "id": "opt-4-c",
+          "text": "Accordion"
+        },
+        {
+          "id": "opt-4-d",
+          "text": "Didgeridoo"
+        }
+      ],
+      "correctOptionId": "opt-4-b",
+      "explanation": "Aria Sharma combines 19-string sitar improvisations with sub-bass frequencies on \"Sitar in the City\"."
+    },
+    {
+      "id": "q-5",
+      "categoryId": "lyrics-challenge",
+      "question": "Complete the lyric from The Velvet Starlights: \"We drove with the top down / Counting constellations in the ______\"",
+      "options": [
+        {
+          "id": "opt-5-a",
+          "text": "Dust"
+        },
+        {
+          "id": "opt-5-b",
+          "text": "Night"
+        },
+        {
+          "id": "opt-5-c",
+          "text": "Ocean"
+        },
+        {
+          "id": "opt-5-d",
+          "text": "Mirror"
+        }
+      ],
+      "correctOptionId": "opt-5-a",
+      "explanation": "The track \"Starlight Boulevard\" features the romantic hook about counting constellations in the dust."
+    },
+    {
+      "id": "q-6",
+      "categoryId": "music-history",
+      "question": "What revolutionary digital music protocol was standardized in 1983, allowing synths and computers to communicate?",
+      "options": [
+        {
+          "id": "opt-6-a",
+          "text": "MP3"
+        },
+        {
+          "id": "opt-6-b",
+          "text": "MIDI (Musical Instrument Digital Interface)"
+        },
+        {
+          "id": "opt-6-c",
+          "text": "Bluetooth Audio"
+        },
+        {
+          "id": "opt-6-d",
+          "text": "WAV 2.0"
+        }
+      ],
+      "correctOptionId": "opt-6-b",
+      "explanation": "MIDI was unveiled by Dave Smith and Ikutaro Kakehashi in 1983, transforming music production forever."
+    },
+    {
+      "id": "q-7",
+      "categoryId": "genre-challenge",
+      "question": "Which West African traditional percussion instrument can mimic the pitch and contour of human speech?",
+      "options": [
+        {
+          "id": "opt-7-a",
+          "text": "Talking Drum (Dundun / Tama)"
+        },
+        {
+          "id": "opt-7-b",
+          "text": "Triangle"
+        },
+        {
+          "id": "opt-7-c",
+          "text": "Castanets"
+        },
+        {
+          "id": "opt-7-d",
+          "text": "Cowbell"
+        }
+      ],
+      "correctOptionId": "opt-7-a",
+      "explanation": "Talking drums are hourglass-shaped tension drums whose pitch is modulated under the drummer’s arm to mimic tonal language."
+    },
+    {
+      "id": "q-8",
+      "categoryId": "guess-artist",
+      "question": "Which Berlin-based deep house maestro is famous for the minimal underground release \"Basement Architectures\"?",
+      "albumArtwork": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-8-a",
+          "text": "Marcus Thorne"
+        },
+        {
+          "id": "opt-8-b",
+          "text": "Ethereal Echo"
+        },
+        {
+          "id": "opt-8-c",
+          "text": "Kofi Tribe"
+        },
+        {
+          "id": "opt-8-d",
+          "text": "Zero Vector"
+        }
+      ],
+      "correctOptionId": "opt-8-a",
+      "explanation": "Marcus Thorne is renowned for authentic vinyl analog saturation and sub-bass club architecture."
+    },
+    {
+      "id": "q-9",
+      "categoryId": "trending-music",
+      "question": "What audio frequency is famously nicknamed \"The Cosmic Tuning\" and claimed to offer deep relaxation?",
+      "options": [
+        {
+          "id": "opt-9-a",
+          "text": "432 Hz"
+        },
+        {
+          "id": "opt-9-b",
+          "text": "120 Hz"
+        },
+        {
+          "id": "opt-9-c",
+          "text": "20,000 Hz"
+        },
+        {
+          "id": "opt-9-d",
+          "text": "60 Hz"
+        }
+      ],
+      "correctOptionId": "opt-9-a",
+      "explanation": "432 Hz is a popular alternative tuning advocated by ambient and acoustic artists for harmonic warmth."
+    },
+    {
+      "id": "q-10",
+      "categoryId": "audio-challenge",
+      "question": "Which prominent 1980s Roland synthesizer chorus sound became the cornerstone of the synthwave revival?",
+      "snippet": "Audio synthesis clue: Analog chorus circuit with dual bucket-brigade delays",
+      "audioPreviewUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      "options": [
+        {
+          "id": "opt-10-a",
+          "text": "Roland Juno-106 / Juno-60"
+        },
+        {
+          "id": "opt-10-b",
+          "text": "Yamaha Grand Piano"
+        },
+        {
+          "id": "opt-10-c",
+          "text": "Fender Stratocaster Neck Pickup"
+        },
+        {
+          "id": "opt-10-d",
+          "text": "Kazoo"
+        }
+      ],
+      "correctOptionId": "opt-10-a",
+      "explanation": "The built-in analog chorus of the Roland Juno series is considered the quintessential 80s synth sound."
+    },
+    {
+      "id": "q-11",
+      "categoryId": "guess-song",
+      "question": "Which track celebrates high-speed midnight driving through a futuristic Japanese metropolis?",
+      "options": [
+        {
+          "id": "opt-11-a",
+          "text": "Neon Tokyo Run"
+        },
+        {
+          "id": "opt-11-b",
+          "text": "Rain On Cobblestones"
+        },
+        {
+          "id": "opt-11-c",
+          "text": "Crystal Chimes"
+        },
+        {
+          "id": "opt-11-d",
+          "text": "Safari Bassline"
+        }
+      ],
+      "correctOptionId": "opt-11-a",
+      "explanation": "\"Neon Tokyo Run\" by Kroma Sector is a pulse-racing electro track with 189,000 streams."
+    },
+    {
+      "id": "q-12",
+      "categoryId": "music-history",
+      "question": "Which iconic drum machine launched in 1980 by Roland became the bedrock of hip hop, house, and techno?",
+      "options": [
+        {
+          "id": "opt-12-a",
+          "text": "Roland TR-808 Rhythm Composer"
+        },
+        {
+          "id": "opt-12-b",
+          "text": "Game Boy Sound Chip"
+        },
+        {
+          "id": "opt-12-c",
+          "text": "Metronome 300"
+        },
+        {
+          "id": "opt-12-d",
+          "text": "Sitar Box"
+        }
+      ],
+      "correctOptionId": "opt-12-a",
+      "explanation": "The Roland TR-808 revolutionized modern electronic and urban music with its deep booming analog bass drum."
+    },
+    {
+      "id": "q-song-kesariya",
+      "categoryId": "guess-song",
+      "question": "Which chart-topping Brahmāstra track features the iconic line \"Rang jaaun jo main haath lagaaun\"?",
+      "snippet": "Kesariya tera ishq hai piya...",
+      "albumArtwork": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
+      "audioPreviewUrl": "/audio/tunequest_songs/Kesariya_-_Film_Version___Brahmāstra___Ranbir___Alia___Pritam___Arijit___Amitabh(256k).mp3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Channa Mereya"
+        },
+        {
+          "id": "b",
+          "text": "Kesariya"
+        },
+        {
+          "id": "c",
+          "text": "Apna Bana Le"
+        },
+        {
+          "id": "d",
+          "text": "Shayad"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Kesariya\", sung by Arijit Singh and composed by Pritam, became one of the biggest romantic hits of recent Bollywood history."
+    },
+    {
+      "id": "q-artist-chaleya",
+      "categoryId": "guess-artist",
+      "question": "Who teamed up with Arijit Singh to provide female vocals for the hit dance number \"Chaleya\" from Jawan?",
+      "snippet": "Ishq mein dil bana hai...",
+      "albumArtwork": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shreya Ghoshal"
+        },
+        {
+          "id": "b",
+          "text": "Shilpa Rao"
+        },
+        {
+          "id": "c",
+          "text": "Neha Kakkar"
+        },
+        {
+          "id": "d",
+          "text": "Sunidhi Chauhan"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Shilpa Rao lent her sultry and versatile vocals alongside Arijit Singh in Anirudh Ravichander’s viral composition."
+    },
+    {
+      "id": "q-lyric-apnabanale",
+      "categoryId": "lyrics-challenge",
+      "question": "Complete the lyric from Bhediya: \"Tu mera koi na hoke bhi kuch laage, ______\"",
+      "snippet": "Sachin-Jigar melodic ballad",
+      "options": [
+        {
+          "id": "a",
+          "text": "Apna bana le piya"
+        },
+        {
+          "id": "b",
+          "text": "Kismat se mila tu"
+        },
+        {
+          "id": "c",
+          "text": "Sang sang chal mere"
+        },
+        {
+          "id": "d",
+          "text": "Dil de diya tujhe"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "The emotional lyric continues: \"Apna bana le piya, apna bana le piya, dil ke nagar mein shehar tu basa le piya.\""
+    },
+    {
+      "id": "q-song-satranga",
+      "categoryId": "guess-song",
+      "question": "Arijit Singh’s haunting Punjabi romantic anthem in the movie Animal is titled:",
+      "albumArtwork": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pehle Bhi Main"
+        },
+        {
+          "id": "b",
+          "text": "Satranga"
+        },
+        {
+          "id": "c",
+          "text": "Hua Main"
+        },
+        {
+          "id": "d",
+          "text": "Saari Duniya Jalaa Denge"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Satranga\" was composed by Shreyas Puranik and touched millions with its poignant reflection on sacrificial love."
+    },
+    {
+      "id": "q-artist-heeriye",
+      "categoryId": "guess-artist",
+      "question": "Which indie singer-songwriter composed and sang the global acoustic sensation \"Heeriye\" with Arijit Singh?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Jasleen Royal"
+        },
+        {
+          "id": "b",
+          "text": "Anuv Jain"
+        },
+        {
+          "id": "c",
+          "text": "Lisa Mishra"
+        },
+        {
+          "id": "d",
+          "text": "Monali Thakur"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Jasleen Royal composed and co-sang \"Heeriye\", creating a viral chart monster celebrated for its uplifting vibe."
+    },
+    {
+      "id": "q-song-husn",
+      "categoryId": "trending-music",
+      "question": "Which 2023-2024 viral indie release by Anuv Jain explores unreciprocated modern dating heartbreaks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mishri"
+        },
+        {
+          "id": "b",
+          "text": "Baarishein"
+        },
+        {
+          "id": "c",
+          "text": "Husn"
+        },
+        {
+          "id": "d",
+          "text": "Gul"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanation": "\"Husn\" by Anuv Jain became an instant generational anthem with its intimate storytelling."
+    },
+    {
+      "id": "q-song-baarishein",
+      "categoryId": "guess-song",
+      "question": "Which bedroom acoustic track catapulted Anuv Jain to fame featuring gentle ukulele arpeggios?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Baarishein"
+        },
+        {
+          "id": "b",
+          "text": "Alag Aasmaan"
+        },
+        {
+          "id": "c",
+          "text": "Riha"
+        },
+        {
+          "id": "d",
+          "text": "Ocean"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Baarishein\" was written and recorded in Anuv’s bedroom, becoming a cornerstone of Indian indie music."
+    },
+    {
+      "id": "q-artist-coldmess",
+      "categoryId": "guess-artist",
+      "question": "Whose breakout EP \"cold/mess\" was personally named by Barack Obama in his favorite songs of the year?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prateek Kuhad"
+        },
+        {
+          "id": "b",
+          "text": "Anuv Jain"
+        },
+        {
+          "id": "c",
+          "text": "Ritviz"
+        },
+        {
+          "id": "d",
+          "text": "When Chai Met Toast"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Prateek Kuhad achieved global fame when \"cold/mess\" was featured by former US President Barack Obama."
+    },
+    {
+      "id": "q-song-brownmunde",
+      "categoryId": "genre-challenge",
+      "question": "\"Desi je geet aa trap je beat aa\" is the opening mantra of which cultural anthem by AP Dhillon & Gurinder Gill?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Excuses"
+        },
+        {
+          "id": "b",
+          "text": "Brown Munde"
+        },
+        {
+          "id": "c",
+          "text": "Insane"
+        },
+        {
+          "id": "d",
+          "text": "Spaceship"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Brown Munde\" redefined Punjabi representation in modern global hip-hop with its sleek trap beats."
+    },
+    {
+      "id": "q-artist-excuses",
+      "categoryId": "guess-artist",
+      "question": "Who delivered the viral hook \"Kehndi hundi si chan tak raah bana de\" in the hit \"Excuses\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AP Dhillon & Gurinder Gill"
+        },
+        {
+          "id": "b",
+          "text": "Diljit Dosanjh"
+        },
+        {
+          "id": "c",
+          "text": "Sidhu Moose Wala"
+        },
+        {
+          "id": "d",
+          "text": "Karan Aujla"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "AP Dhillon, Gurinder Gill, and producer Intense created \"Excuses\", dominating Instagram and streaming charts for years."
+    },
+    {
+      "id": "q-song-borntoshine",
+      "categoryId": "trending-music",
+      "question": "Diljit Dosanjh’s swagger-filled anthem declaring \"Jatt paida hoya bas chhaun vaaste\" is titled:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Born to Shine"
+        },
+        {
+          "id": "b",
+          "text": "Lover"
+        },
+        {
+          "id": "c",
+          "text": "Clash"
+        },
+        {
+          "id": "d",
+          "text": "Peaches"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Born to Shine\" from the G.O.A.T. album is one of Diljit’s signature high-energy stage openers."
+    },
+    {
+      "id": "q-artist-taubatauba",
+      "categoryId": "guess-artist",
+      "question": "Who wrote and sang the runaway 2024 dance hit \"Tauba Tauba\" from the film Bad Newz?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Karan Aujla"
+        },
+        {
+          "id": "b",
+          "text": "Badshah"
+        },
+        {
+          "id": "c",
+          "text": "Yo Yo Honey Singh"
+        },
+        {
+          "id": "d",
+          "text": "Guru Randhawa"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Karan Aujla wrote and performed \"Tauba Tauba\", becoming an international dance sensation."
+    },
+    {
+      "id": "q-song-lover",
+      "categoryId": "genre-challenge",
+      "question": "Which Diljit Dosanjh song famously introduced an 80s synthwave disco aesthetic to Punjabi pop?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lover"
+        },
+        {
+          "id": "b",
+          "text": "Do You Know"
+        },
+        {
+          "id": "c",
+          "text": "Proper Patola"
+        },
+        {
+          "id": "d",
+          "text": "Lemonade"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Lover\" featured sparkling retro synthesizers produced by Intense from the MoonChild Era album."
+    },
+    {
+      "id": "q-song-blindinglights",
+      "categoryId": "guess-song",
+      "question": "Which song was crowned by Billboard as the #1 Greatest Hot 100 Song of All Time in 2021?",
+      "snippet": "I said, ooh, I’m blinded by the lights...",
+      "albumArtwork": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+      "audioPreviewUrl": "/audio/tunequest_songs/The_Weeknd_-_Starboy_ft._Daft_Punk__Official_Video__ft._Daft_Punk(256k).mp3",
+      "options": [
+        {
+          "id": "a",
+          "text": "Starboy"
+        },
+        {
+          "id": "b",
+          "text": "Blinding Lights"
+        },
+        {
+          "id": "c",
+          "text": "Save Your Tears"
+        },
+        {
+          "id": "d",
+          "text": "Can’t Feel My Face"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "The Weeknd’s 80s synth-pop smash \"Blinding Lights\" spent 90 weeks on the Hot 100, breaking historical records."
+    },
+    {
+      "id": "q-artist-diewithasmile",
+      "categoryId": "trending-music",
+      "question": "Lady Gaga and which male superstar combined vocals for the surprise 2024 ballad \"Die With A Smile\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Bruno Mars"
+        },
+        {
+          "id": "b",
+          "text": "The Weeknd"
+        },
+        {
+          "id": "c",
+          "text": "Justin Bieber"
+        },
+        {
+          "id": "d",
+          "text": "Sam Smith"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Bruno Mars and Lady Gaga delivered an extraordinary vocal collaboration that shot to #1 globally."
+    },
+    {
+      "id": "q-song-shapeofyou",
+      "categoryId": "guess-song",
+      "question": "Ed Sheeran originally wrote the marimba groove for \"Shape of You\" imagining which superstar would sing it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rihanna"
+        },
+        {
+          "id": "b",
+          "text": "Beyoncé"
+        },
+        {
+          "id": "c",
+          "text": "Dua Lipa"
+        },
+        {
+          "id": "d",
+          "text": "Katy Perry"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Ed Sheeran revealed he and Steve Mac began writing the tropical bounce thinking it would fit Rihanna, before keeping it."
+    },
+    {
+      "id": "q-artist-believer",
+      "categoryId": "guess-artist",
+      "question": "Which rock band scored diamond-certified anthems with \"Believer\", \"Thunder\", and \"Demons\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Imagine Dragons"
+        },
+        {
+          "id": "b",
+          "text": "Coldplay"
+        },
+        {
+          "id": "c",
+          "text": "OneRepublic"
+        },
+        {
+          "id": "d",
+          "text": "Maroon 5"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Dan Reynolds and Imagine Dragons became the first band in music history to have four songs exceed 1 billion Spotify streams."
+    },
+    {
+      "id": "q-song-asitwas",
+      "categoryId": "trending-music",
+      "question": "\"You know it’s not the same as it was\" is the signature synth hook by which artist?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Harry Styles"
+        },
+        {
+          "id": "b",
+          "text": "Charlie Puth"
+        },
+        {
+          "id": "c",
+          "text": "Shawn Mendes"
+        },
+        {
+          "id": "d",
+          "text": "Justin Bieber"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Harry Styles released \"As It Was\" as the lead single from Harry’s House, spending 15 weeks atop the Billboard Hot 100."
+    },
+    {
+      "id": "q-lyric-levitating",
+      "categoryId": "lyrics-challenge",
+      "question": "Complete Dua Lipa’s famous disco lyric: \"If you wanna run away with me, I know a galaxy and ______\"",
+      "options": [
+        {
+          "id": "a",
+          "text": "I can take you for a ride"
+        },
+        {
+          "id": "b",
+          "text": "we can touch the sky"
+        },
+        {
+          "id": "c",
+          "text": "we can dance tonight"
+        },
+        {
+          "id": "d",
+          "text": "we will never die"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "The full line from \"Levitating\" is: \"If you wanna run away with me, I know a galaxy and I can take you for a ride.\""
+    },
+    {
+      "id": "q-song-cruelsummer",
+      "categoryId": "trending-music",
+      "question": "Which fan-favorite Taylor Swift bridge was screamed by stadium crowds throughout the Eras Tour?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cruel Summer"
+        },
+        {
+          "id": "b",
+          "text": "Love Story"
+        },
+        {
+          "id": "c",
+          "text": "Anti-Hero"
+        },
+        {
+          "id": "d",
+          "text": "Blank Space"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Cruel Summer\" became a monumental #1 hit four years after its original release thanks to the live fervor of the Eras Tour."
+    },
+    {
+      "id": "q-artist-attention",
+      "categoryId": "guess-artist",
+      "question": "Which singer with absolute perfect pitch beatboxed the funky bassline of \"Attention\" into his phone?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Charlie Puth"
+        },
+        {
+          "id": "b",
+          "text": "Bruno Mars"
+        },
+        {
+          "id": "c",
+          "text": "Shawn Mendes"
+        },
+        {
+          "id": "d",
+          "text": "Justin Bieber"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Charlie Puth famously created the viral bass groove while waiting on a Tokyo tarmac."
+    },
+    {
+      "id": "q-song-countingstars",
+      "categoryId": "guess-song",
+      "question": "Which 2013 OneRepublic track blends acoustic folk chords with a pulsing four-on-the-floor dance rhythm?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Counting Stars"
+        },
+        {
+          "id": "b",
+          "text": "Apologize"
+        },
+        {
+          "id": "c",
+          "text": "Secrets"
+        },
+        {
+          "id": "d",
+          "text": "Good Life"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Counting Stars\", penned by Ryan Tedder, has amassed over 4 billion views on YouTube."
+    },
+    {
+      "id": "q-lyric-antihero",
+      "categoryId": "lyrics-challenge",
+      "question": "Complete Taylor Swift’s iconic Midnights confession: \"It’s me, hi, ______\"",
+      "options": [
+        {
+          "id": "a",
+          "text": "I’m the problem, it’s me"
+        },
+        {
+          "id": "b",
+          "text": "I’ve been waiting all week"
+        },
+        {
+          "id": "c",
+          "text": "did you miss me"
+        },
+        {
+          "id": "d",
+          "text": "I’m waking up again"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"It’s me, hi, I’m the problem, it’s me / At teatime, everybody agrees.\""
+    },
+    {
+      "id": "q-artist-senorita",
+      "categoryId": "guess-artist",
+      "question": "Which duo scored a worldwide Latin pop sensation with \"Senorita\" in 2019?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shawn Mendes & Camila Cabello"
+        },
+        {
+          "id": "b",
+          "text": "Justin Bieber & Selena Gomez"
+        },
+        {
+          "id": "c",
+          "text": "The Kid LAROI & Justin Bieber"
+        },
+        {
+          "id": "d",
+          "text": "Charlie Puth & Selena Gomez"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Shawn Mendes and Camila Cabello teamed up for the seductive Grammy-nominated summer smash \"Señorita\"."
+    },
+    {
+      "id": "q-song-terevaaste",
+      "categoryId": "guess-song",
+      "question": "Which song features the promise: \"Tere vaaste falak se main chaand laaunga\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Chaleya"
+        },
+        {
+          "id": "b",
+          "text": "Tere Vaaste"
+        },
+        {
+          "id": "c",
+          "text": "Apna Bana Le"
+        },
+        {
+          "id": "d",
+          "text": "Satranga"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Tere Vaaste\" from Zara Hatke Zara Bachke became a nationwide romantic anthem."
+    },
+    {
+      "id": "q-song-vekamleya",
+      "categoryId": "lyrics-challenge",
+      "question": "Complete the lyrics from Rocky Aur Rani: \"Ve kamleya ve kamleya, dil ro ke kehnda hai ______\"",
+      "options": [
+        {
+          "id": "a",
+          "text": "kamleya"
+        },
+        {
+          "id": "b",
+          "text": "sajna"
+        },
+        {
+          "id": "c",
+          "text": "mahiya"
+        },
+        {
+          "id": "d",
+          "text": "ranjha"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Ve Kamleya\" captures the bittersweet vulnerability of tender love."
+    },
+    {
+      "id": "q-song-shayad",
+      "categoryId": "guess-song",
+      "question": "Which Arijit Singh classic opens with \"Shayad kabhi na keh sakoon main tumko, kahe bina samajh lo tum shayad\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shayad"
+        },
+        {
+          "id": "b",
+          "text": "Tum Hi Ho"
+        },
+        {
+          "id": "c",
+          "text": "Kesariya"
+        },
+        {
+          "id": "d",
+          "text": "Hawayein"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "From Love Aaj Kal, \"Shayad\" is one of Pritam and Arijit Singh’s most delicate acoustic recordings."
+    },
+    {
+      "id": "q-song-ranjha",
+      "categoryId": "guess-song",
+      "question": "In the film Shershaah, B Praak and Jasleen Royal teamed up for which viral wedding and emotional ballad?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raanjhanaa"
+        },
+        {
+          "id": "b",
+          "text": "Ranjha"
+        },
+        {
+          "id": "c",
+          "text": "Mann Bharryaa 2.0"
+        },
+        {
+          "id": "d",
+          "text": "Raataan Lambiyan"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Ranjha\" became an international soundtrack sensation, topping charts across South Asia and the diaspora."
+    },
+    {
+      "id": "q-song-maanmerijaan",
+      "categoryId": "trending-music",
+      "question": "King’s breakout track with the chorus \"Main teri ankhon mein udta hua dekhoon\" is titled:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tu Aake Dekhle"
+        },
+        {
+          "id": "b",
+          "text": "Maan Meri Jaan"
+        },
+        {
+          "id": "c",
+          "text": "Oops"
+        },
+        {
+          "id": "d",
+          "text": "Pablo"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Maan Meri Jaan\" from the Champagne Talk album became a massive multi-platinum hit."
+    },
+    {
+      "id": "q-song-alagaasmaan",
+      "categoryId": "guess-song",
+      "question": "Which Anuv Jain single touches upon long-distance relationships sharing the same sky?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alag Aasmaan"
+        },
+        {
+          "id": "b",
+          "text": "Baarishein"
+        },
+        {
+          "id": "c",
+          "text": "Riha"
+        },
+        {
+          "id": "d",
+          "text": "Husn"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Alag Aasmaan\" conveys the comforting thought that no matter the physical distance, the same sky bridges two lovers."
+    },
+    {
+      "id": "q-song-kasoor",
+      "categoryId": "guess-song",
+      "question": "Prateek Kuhad’s sweet acoustic track featuring questions to fans in its music video is:",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kasoor"
+        },
+        {
+          "id": "b",
+          "text": "Cold/Mess"
+        },
+        {
+          "id": "c",
+          "text": "Tum Jab Paas"
+        },
+        {
+          "id": "d",
+          "text": "Tune Kaha"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Kasoor\" was celebrated for its crowdsourced emotional fan music video and acoustic melody."
+    },
+    {
+      "id": "q-song-iktara",
+      "categoryId": "guess-artist",
+      "question": "Who delivered the sublime Sufi folk female vocals for \"Iktara\" in Wake Up Sid?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kavita Seth"
+        },
+        {
+          "id": "b",
+          "text": "Rekha Bhardwaj"
+        },
+        {
+          "id": "c",
+          "text": "Harshdeep Kaur"
+        },
+        {
+          "id": "d",
+          "text": "Richa Sharma"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Kavita Seth won Filmfare and IIFA awards for her iconic rendition of \"Iktara\"."
+    },
+    {
+      "id": "q-song-insane",
+      "categoryId": "genre-challenge",
+      "question": "Which AP Dhillon track features the lyrics \"Billo bagge billyan da ki karengi\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Insane"
+        },
+        {
+          "id": "b",
+          "text": "Brown Munde"
+        },
+        {
+          "id": "c",
+          "text": "Excuses"
+        },
+        {
+          "id": "d",
+          "text": "Majhail"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Insane\" by AP Dhillon & Gurinder Gill was produced by Gminxr."
+    },
+    {
+      "id": "q-song-withyou",
+      "categoryId": "guess-song",
+      "question": "AP Dhillon’s romantic track filmed candidly on an iPhone with Banita Sandhu is:",
+      "options": [
+        {
+          "id": "a",
+          "text": "With You"
+        },
+        {
+          "id": "b",
+          "text": "Summer High"
+        },
+        {
+          "id": "c",
+          "text": "Dil Nu"
+        },
+        {
+          "id": "d",
+          "text": "True Stories"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"With You\" went viral for its unvarnished, sweet DIY visual aesthetics and melodic hook."
+    },
+    {
+      "id": "q-song-goat",
+      "categoryId": "guess-song",
+      "question": "Which Diljit Dosanjh title track declared \"Jatt da taan naam hi brand ho gaya\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "G.O.A.T."
+        },
+        {
+          "id": "b",
+          "text": "Born to Shine"
+        },
+        {
+          "id": "c",
+          "text": "Clash"
+        },
+        {
+          "id": "d",
+          "text": "Chauffeur"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "The title song \"G.O.A.T.\" cemented Diljit’s status as a worldwide superstar."
+    },
+    {
+      "id": "q-song-doyouknow",
+      "categoryId": "lyrics-challenge",
+      "question": "Complete Diljit’s line: \"Do you know main tenu kinna ______ karda?\"",
+      "options": [
+        {
+          "id": "a",
+          "text": "pyaar"
+        },
+        {
+          "id": "b",
+          "text": "yaad"
+        },
+        {
+          "id": "c",
+          "text": "miss"
+        },
+        {
+          "id": "d",
+          "text": "wait"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Do You Know\" was composed by B Praak with lyrics by Jaani."
+    },
+    {
+      "id": "q-song-softly",
+      "categoryId": "trending-music",
+      "question": "Karan Aujla and Ikky collaborated on which bouncy track from the Making Memories album?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Softly"
+        },
+        {
+          "id": "b",
+          "text": "White Brown Black"
+        },
+        {
+          "id": "c",
+          "text": "Admirin’ You"
+        },
+        {
+          "id": "d",
+          "text": "Winning Speech"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Softly\" blended upbeat UK-Canadian hip-hop bounce with traditional Punjabi folk rhythm."
+    },
+    {
+      "id": "q-song-starboy",
+      "categoryId": "guess-artist",
+      "question": "Which legendary French electronic duo co-produced and was featured on The Weeknd’s \"Starboy\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Daft Punk"
+        },
+        {
+          "id": "b",
+          "text": "Justice"
+        },
+        {
+          "id": "c",
+          "text": "Air"
+        },
+        {
+          "id": "d",
+          "text": "Cassius"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Daft Punk produced both \"Starboy\" and \"I Feel It Coming\" on The Weeknd’s 2016 record."
+    },
+    {
+      "id": "q-song-perfect",
+      "categoryId": "guess-song",
+      "question": "Ed Sheeran wrote which romantic wedding ballad for his wife Cherry Seaborn on an acoustic guitar in Ibiza?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Thinking Out Loud"
+        },
+        {
+          "id": "b",
+          "text": "Perfect"
+        },
+        {
+          "id": "c",
+          "text": "Photograph"
+        },
+        {
+          "id": "d",
+          "text": "Castle on the Hill"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Perfect\" reached #1 across dozens of countries and was also recorded as a duet with Beyoncé."
+    },
+    {
+      "id": "q-song-thunder",
+      "categoryId": "guess-song",
+      "question": "\"Just a young gun with a quick fuse\" is the opening lyric of which Imagine Dragons hit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Thunder"
+        },
+        {
+          "id": "b",
+          "text": "Believer"
+        },
+        {
+          "id": "c",
+          "text": "Radioactive"
+        },
+        {
+          "id": "d",
+          "text": "Whatever It Takes"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Thunder\" became one of Imagine Dragons’ highest-streamed songs worldwide."
+    },
+    {
+      "id": "q-song-watermelonsugar",
+      "categoryId": "trending-music",
+      "question": "Which breezy funk-pop single won Harry Styles his first Grammy Award?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sign of the Times"
+        },
+        {
+          "id": "b",
+          "text": "Watermelon Sugar"
+        },
+        {
+          "id": "c",
+          "text": "Golden"
+        },
+        {
+          "id": "d",
+          "text": "Adore You"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "\"Watermelon Sugar\" reached #1 on the US Billboard Hot 100 in August 2020."
+    },
+    {
+      "id": "q-song-dontstartnow",
+      "categoryId": "genre-challenge",
+      "question": "Which Dua Lipa song launched the 2020s disco-pop revolution with the lyric \"Did a full 180, crazy\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Don’t Start Now"
+        },
+        {
+          "id": "b",
+          "text": "Physical"
+        },
+        {
+          "id": "c",
+          "text": "Break My Heart"
+        },
+        {
+          "id": "d",
+          "text": "Hallucinate"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Don’t Start Now\" led Dua Lipa’s acclaimed Future Nostalgia campaign."
+    },
+    {
+      "id": "q-song-lovestory",
+      "categoryId": "guess-song",
+      "question": "Taylor Swift’s Shakespearean-inspired country pop classic \"Love Story\" reimagines which tragedy with a happy ending?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Romeo and Juliet"
+        },
+        {
+          "id": "b",
+          "text": "Hamlet"
+        },
+        {
+          "id": "c",
+          "text": "Macbeth"
+        },
+        {
+          "id": "d",
+          "text": "Othello"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Taylor rewritten the Romeo and Juliet tragedy so Romeo proposes and the lovers live happily ever after."
+    },
+    {
+      "id": "q-song-stay",
+      "categoryId": "trending-music",
+      "question": "The Kid LAROI and Justin Bieber spent 7 weeks at #1 on the Billboard Hot 100 with which 2021 pop-punk smash?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stay"
+        },
+        {
+          "id": "b",
+          "text": "Ghost"
+        },
+        {
+          "id": "c",
+          "text": "Peaches"
+        },
+        {
+          "id": "d",
+          "text": "Without You"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Stay\" became one of the fastest tracks in history to surpass 2 billion streams on Spotify."
+    },
+    {
+      "id": "q-song-memories",
+      "categoryId": "guess-song",
+      "question": "Maroon 5’s emotional tribute \"Memories\" is harmonically based on which classical composition?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pachelbel’s Canon in D"
+        },
+        {
+          "id": "b",
+          "text": "Beethoven’s Moonlight Sonata"
+        },
+        {
+          "id": "c",
+          "text": "Vivaldi’s Four Seasons"
+        },
+        {
+          "id": "d",
+          "text": "Bach’s Air on the G String"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "\"Memories\" incorporates the famous chord progression from Johann Pachelbel’s Canon in D Major."
+    }
+  ],
+  "dailyChallenges": [
+    {
+      "id": "q-1",
+      "categoryId": "guess-artist",
+      "question": "Which pioneering synthwave act produced the critically acclaimed album \"Cyber Horizon\"?",
+      "albumArtwork": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-1-a",
+          "text": "Solaris Wave"
+        },
+        {
+          "id": "opt-1-b",
+          "text": "Kroma Sector"
+        },
+        {
+          "id": "opt-1-c",
+          "text": "Luna Eclipse"
+        },
+        {
+          "id": "opt-1-d",
+          "text": "Marcus Thorne"
+        }
+      ],
+      "correctOptionId": "opt-1-a",
+      "explanation": "Solaris Wave produced \"Cyber Horizon\" in early 2024 using analog tape machines and retro synthesizers."
+    },
+    {
+      "id": "q-2",
+      "categoryId": "audio-challenge",
+      "question": "Listen closely to this atmospheric groove. Which genre does this track represent?",
+      "snippet": "Audio Preview (Press play below to hear the 10-second sample)",
+      "audioPreviewUrl": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+      "albumArtwork": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-2-a",
+          "text": "Lo-fi Chill"
+        },
+        {
+          "id": "opt-2-b",
+          "text": "Death Metal"
+        },
+        {
+          "id": "opt-2-c",
+          "text": "Hardstyle Techno"
+        },
+        {
+          "id": "opt-2-d",
+          "text": "Bluegrass Acoustic"
+        }
+      ],
+      "correctOptionId": "opt-2-a",
+      "explanation": "The track \"Midnight Reverie\" by Luna Eclipse features soft vinyl crackle and mellow electric piano characteristic of Lo-fi Chill."
+    },
+    {
+      "id": "q-3",
+      "categoryId": "guess-song",
+      "question": "Which high-octane electronic track opens with the lyric: \"Synchronize the pulse / Feel the static burn the wires\"?",
+      "albumArtwork": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-3-a",
+          "text": "Raindrop Coffee Shop"
+        },
+        {
+          "id": "opt-3-b",
+          "text": "Quantum Pulse"
+        },
+        {
+          "id": "opt-3-c",
+          "text": "Cosmic Drift"
+        },
+        {
+          "id": "opt-3-d",
+          "text": "Golden Sunset Mirage"
+        }
+      ],
+      "correctOptionId": "opt-3-b",
+      "explanation": "\"Quantum Pulse\" by Kroma Sector peaked on the Global Cyberpunk leaderboards with over 230,000 streams."
+    },
+    {
+      "id": "q-4",
+      "categoryId": "album-challenge",
+      "question": "Which instrument is heavily blended with electronic 808s in Aria Sharma's landmark album \"Sitar in the City\"?",
+      "albumArtwork": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop&q=80",
+      "options": [
+        {
+          "id": "opt-4-a",
+          "text": "Bagpipes"
+        },
+        {
+          "id": "opt-4-b",
+          "text": "Acoustic Sitar & Sarod"
+        },
+        {
+          "id": "opt-4-c",
+          "text": "Accordion"
+        },
+        {
+          "id": "opt-4-d",
+          "text": "Didgeridoo"
+        }
+      ],
+      "correctOptionId": "opt-4-b",
+      "explanation": "Aria Sharma combines 19-string sitar improvisations with sub-bass frequencies on \"Sitar in the City\"."
+    },
+    {
+      "id": "q-5",
+      "categoryId": "lyrics-challenge",
+      "question": "Complete the lyric from The Velvet Starlights: \"We drove with the top down / Counting constellations in the ______\"",
+      "options": [
+        {
+          "id": "opt-5-a",
+          "text": "Dust"
+        },
+        {
+          "id": "opt-5-b",
+          "text": "Night"
+        },
+        {
+          "id": "opt-5-c",
+          "text": "Ocean"
+        },
+        {
+          "id": "opt-5-d",
+          "text": "Mirror"
+        }
+      ],
+      "correctOptionId": "opt-5-a",
+      "explanation": "The track \"Starlight Boulevard\" features the romantic hook about counting constellations in the dust."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "short_name": "TuneQuest",
+  "name": "TuneQuest — Listen. Play. Earn. Unlock.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#08080D",
+  "theme_color": "#08080D",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "description": "Gamified music streaming and trivia rewards platform."
+}

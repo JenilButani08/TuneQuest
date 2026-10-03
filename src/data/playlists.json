@@ -1,0 +1,152 @@
+[
+  {
+    "id": "pl-tunequest-master-29",
+    "title": "TuneQuest Studio Master Hits",
+    "description": "All 29 original full-length studio recordings with 256kbps HD audio.",
+    "coverImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+    "ownerId": "official_tunequest",
+    "ownerName": "TuneQuest Studio Originals",
+    "songIds": [
+      "song-faded",
+      "song-let-me-down-slowly",
+      "song-arz-kiya-hai",
+      "song-soulmate",
+      "song-bairan",
+      "song-darkhaast",
+      "song-dooron-dooron",
+      "song-ehsaas",
+      "song-him-and-i",
+      "song-gehra-hua",
+      "song-ishqa-ve",
+      "song-jhol",
+      "song-kashish",
+      "song-fearless-ii",
+      "song-despacito",
+      "song-majboor",
+      "song-beggin",
+      "song-khat",
+      "song-sahiba",
+      "song-timeless",
+      "song-after-hours",
+      "song-reminder",
+      "song-udi-udi",
+      "song-khayaal",
+      "song-31",
+      "song-60",
+      "song-63",
+      "song-64",
+      "song-76"
+    ],
+    "isPublic": true,
+    "isLiked": true,
+    "createdAt": "2025-03-01T12:00:00Z"
+  },
+  {
+    "id": "pl-1",
+    "title": "Global Billboard Hits",
+    "description": "World-dominating singles from Ed Sheeran, The Weeknd, Dua Lipa, Lady Gaga, and Taylor Swift.",
+    "coverImage": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80",
+    "ownerId": "usr_music_explorer_01",
+    "ownerName": "Alex Rivers",
+    "songIds": [
+      "song-faded",
+      "song-despacito",
+      "song-beggin",
+      "song-60",
+      "song-63",
+      "song-64",
+      "song-76"
+    ],
+    "isPublic": true,
+    "isLiked": true,
+    "createdAt": "2025-01-18T14:20:00Z"
+  },
+  {
+    "id": "pl-2",
+    "title": "Acoustic & Indie Soul",
+    "description": "Gentle fingerpicking, poetic storytelling, and late-night acoustic reflections.",
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
+    "ownerId": "usr_music_explorer_01",
+    "ownerName": "Alex Rivers",
+    "songIds": [
+      "song-arz-kiya-hai",
+      "song-let-me-down-slowly",
+      "song-sahiba",
+      "song-majboor"
+    ],
+    "isPublic": true,
+    "isLiked": true,
+    "createdAt": "2025-02-01T09:12:00Z"
+  },
+  {
+    "id": "pl-3",
+    "title": "Bollywood Romance & Sufi",
+    "description": "Soul-stirring anthems by Arijit Singh, Mithoon, Pritam, and legendary playback vocalists.",
+    "coverImage": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop&q=80",
+    "ownerId": "usr_music_explorer_01",
+    "ownerName": "Alex Rivers",
+    "songIds": [
+      "song-31",
+      "song-darkhaast",
+      "song-soulmate",
+      "song-gehra-hua",
+      "song-ehsaas"
+    ],
+    "isPublic": true,
+    "isLiked": false,
+    "createdAt": "2025-02-14T19:40:00Z"
+  },
+  {
+    "id": "pl-4",
+    "title": "Punjabi Fire & Urban Beats",
+    "description": "High-octane Punjabi drill, melodic trap, and viral anthems from AP Dhillon, Diljit, and Karan Aujla.",
+    "coverImage": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=600&auto=format&fit=crop&q=80",
+    "ownerId": "official_tunequest",
+    "ownerName": "TuneQuest Curators",
+    "songIds": [
+      "song-khayaal",
+      "song-ishqa-ve",
+      "song-khat",
+      "song-dooron-dooron"
+    ],
+    "isPublic": true,
+    "isLiked": true,
+    "createdAt": "2025-01-10T12:00:00Z"
+  },
+  {
+    "id": "pl-5",
+    "title": "Coke Studio & Fusion Waves",
+    "description": "Groundbreaking fusion sessions bridging raw regional instruments with contemporary production.",
+    "coverImage": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&auto=format&fit=crop&q=80",
+    "ownerId": "official_tunequest",
+    "ownerName": "TuneQuest Curators",
+    "songIds": [
+      "song-jhol",
+      "song-arz-kiya-hai",
+      "song-bairan",
+      "song-kashish",
+      "song-udi-udi"
+    ],
+    "isPublic": true,
+    "isLiked": false,
+    "createdAt": "2025-02-20T16:15:00Z"
+  },
+  {
+    "id": "pl-6",
+    "title": "The Weeknd Complete Experience",
+    "description": "Cinematic synthwave, dark R&B, and dancefloor anthems from Abel Tesfaye.",
+    "coverImage": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&auto=format&fit=crop&q=80",
+    "ownerId": "official_tunequest",
+    "ownerName": "TuneQuest Curators",
+    "songIds": [
+      "song-60",
+      "song-after-hours",
+      "song-reminder",
+      "song-timeless",
+      "song-him-and-i"
+    ],
+    "isPublic": true,
+    "isLiked": false,
+    "createdAt": "2025-01-05T08:00:00Z"
+  }
+]

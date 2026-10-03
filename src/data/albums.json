@@ -1,0 +1,76 @@
+[
+  {
+    "id": "alb-starboy",
+    "title": "Starboy",
+    "artist": "The Weeknd",
+    "artistId": "art-weeknd",
+    "releaseYear": 2016,
+    "coverImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&auto=format&fit=crop&q=80",
+    "songIds": [
+      "song-60",
+      "song-reminder"
+    ],
+    "genre": "R&B / Electro Pop"
+  },
+  {
+    "id": "alb-divide",
+    "title": "÷ (Divide)",
+    "artist": "Ed Sheeran",
+    "artistId": "art-edsheeran",
+    "releaseYear": 2017,
+    "coverImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80",
+    "songIds": [
+      "song-63",
+      "song-64"
+    ],
+    "genre": "Pop"
+  },
+  {
+    "id": "alb-brahmastra",
+    "title": "Brahmāstra",
+    "artist": "Pritam",
+    "artistId": "art-arijit",
+    "releaseYear": 2022,
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
+    "songIds": [
+      "song-31"
+    ],
+    "genre": "Bollywood Romantic"
+  },
+  {
+    "id": "alb-after-hours",
+    "title": "After Hours",
+    "artist": "The Weeknd",
+    "artistId": "art-weeknd",
+    "releaseYear": 2020,
+    "coverImage": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&auto=format&fit=crop&q=80",
+    "songIds": [
+      "song-after-hours"
+    ],
+    "genre": "Synthwave / R&B"
+  },
+  {
+    "id": "alb-different-world",
+    "title": "Different World",
+    "artist": "Alan Walker",
+    "artistId": "art-alan-walker",
+    "releaseYear": 2018,
+    "coverImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&auto=format&fit=crop&q=80",
+    "songIds": [
+      "song-faded"
+    ],
+    "genre": "EDM"
+  },
+  {
+    "id": "alb-cs-pk-15",
+    "title": "Coke Studio Pakistan Season 15",
+    "artist": "Various Artists",
+    "artistId": "art-maanu",
+    "releaseYear": 2024,
+    "coverImage": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop&q=80",
+    "songIds": [
+      "song-jhol"
+    ],
+    "genre": "Coke Studio"
+  }
+]

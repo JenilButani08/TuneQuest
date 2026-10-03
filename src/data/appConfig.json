@@ -1,0 +1,32 @@
+{
+  "appName": "TuneQuest",
+  "version": "1.0.0",
+  "description": "Production-ready gamified music streaming platform",
+  "audioSettings": {
+    "supportedBitrates": [
+      "128kbps",
+      "160kbps",
+      "320kbps Lossless"
+    ],
+    "defaultBitrate": "320kbps Lossless",
+    "volumeDefault": 0.8,
+    "crossfadeSeconds": 2
+  },
+  "gamificationRules": {
+    "pointsPerCorrectQuiz": 10,
+    "xpPerCorrectQuiz": 15,
+    "dailyChallengeBonus": 50,
+    "sevenDayStreakBonus": 200,
+    "referralInviterPoints": 100,
+    "referralInviteePoints": 50
+  },
+  "themeSettings": {
+    "defaultMode": "system",
+    "modesSupported": [
+      "light",
+      "dark",
+      "system"
+    ],
+    "defaultAccentColor": "primary"
+  }
+}

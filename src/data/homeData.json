@@ -1,0 +1,24 @@
+{
+  "heroEditorial": {
+    "tagline": "Staff Curated Spotlight",
+    "badge": "Original Demo Featured",
+    "title": "Kesariya",
+    "artist": "Arijit Singh",
+    "description": "The chart-topping romantic anthem from Brahmāstra composed by Pritam, featuring soul-stirring melody and soaring acoustic strings.",
+    "genre": "Bollywood Romantic",
+    "songId": "song-31",
+    "coverImage": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop&q=80"
+  },
+  "dailyChallengePrompt": {
+    "title": "Daily Music Challenge",
+    "description": "3 audio snippets, 10 seconds each. Can you maintain your 7-day streak and earn +50 TunePoints?",
+    "bonusTunePoints": 50,
+    "bonusXp": 25,
+    "estimatedTimeMinutes": 2
+  },
+  "rewardsBanner": {
+    "title": "Earn While You Listen",
+    "description": "Complete daily music trivia, keep your streak alive, and redeem points for VIP passes and exclusive audio presets.",
+    "currentPointsLabel": "1,240 TunePoints Available"
+  }
+}

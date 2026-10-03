@@ -1,0 +1,209 @@
+{
+  "currentUser": {
+    "id": "usr_music_explorer_01",
+    "username": "MusicExplorer",
+    "displayName": "Alex Rivers",
+    "email": "explorer@tunequest.app",
+    "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80",
+    "level": 7,
+    "xp": 1240,
+    "xpToNextLevel": 2000,
+    "tunePoints": 1240,
+    "streak": 7,
+    "streakActiveToday": true,
+    "streakCalendar": [
+      {
+        "day": "Monday",
+        "dayShort": "Mon",
+        "completed": true,
+        "isToday": false
+      },
+      {
+        "day": "Tuesday",
+        "dayShort": "Tue",
+        "completed": true,
+        "isToday": false
+      },
+      {
+        "day": "Wednesday",
+        "dayShort": "Wed",
+        "completed": true,
+        "isToday": false
+      },
+      {
+        "day": "Thursday",
+        "dayShort": "Thu",
+        "completed": true,
+        "isToday": false
+      },
+      {
+        "day": "Friday",
+        "dayShort": "Fri",
+        "completed": true,
+        "isToday": false
+      },
+      {
+        "day": "Saturday",
+        "dayShort": "Sat",
+        "completed": true,
+        "isToday": false
+      },
+      {
+        "day": "Sunday",
+        "dayShort": "Sun",
+        "completed": true,
+        "isToday": true
+      }
+    ],
+    "favoriteGenres": [
+      "Synthwave",
+      "Indie Pop",
+      "Lo-fi Chill",
+      "Cyberpunk",
+      "Bollywood Fusion"
+    ],
+    "subscription": {
+      "tier": "free",
+      "features": [
+        "Standard Audio (160kbps)",
+        "Ad-supported Stream",
+        "Unlimited Quizzes",
+        "Earn TunePoints"
+      ]
+    },
+    "stats": {
+      "quizzesCompleted": 48,
+      "correctAnswers": 214,
+      "accuracyPercent": 82,
+      "songsPlayed": 342,
+      "playlistsCreated": 6,
+      "timeListenedMinutes": 1850,
+      "friendsReferred": 5
+    },
+    "referralCode": "TUNE-A7K92X",
+    "createdAt": "2025-01-15T10:00:00Z"
+  },
+  "registeredUsers": [
+    {
+      "id": "usr_music_explorer_01",
+      "username": "MusicExplorer",
+      "displayName": "Alex Rivers",
+      "email": "explorer@tunequest.app",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80",
+      "level": 7,
+      "tunePoints": 1240,
+      "streak": 7,
+      "referralCode": "TUNE-A7K92X",
+      "favoriteGenres": [
+        "Synthwave",
+        "Indie Pop",
+        "Lo-fi Chill",
+        "Cyberpunk",
+        "Bollywood Fusion"
+      ],
+      "subscription": {
+        "tier": "free",
+        "features": [
+          "Standard Audio (160kbps)",
+          "Ad-supported Stream",
+          "Unlimited Quizzes",
+          "Earn TunePoints"
+        ]
+      },
+      "stats": {
+        "quizzesCompleted": 48,
+        "correctAnswers": 214,
+        "accuracyPercent": 82,
+        "songsPlayed": 342,
+        "playlistsCreated": 6,
+        "timeListenedMinutes": 1850,
+        "friendsReferred": 5
+      },
+      "createdAt": "2025-01-15T10:00:00Z",
+      "passwordHint": "demo123",
+      "role": "user"
+    },
+    {
+      "id": "usr_music_listener_02",
+      "username": "BeatSeeker",
+      "displayName": "Elena Rostova",
+      "email": "elena@tunequest.app",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&auto=format&fit=crop&q=80",
+      "level": 5,
+      "tunePoints": 890,
+      "streak": 4,
+      "referralCode": "TUNE-B9X4L1",
+      "favoriteGenres": [
+        "Lo-fi Chill",
+        "Ambient"
+      ],
+      "subscription": {
+        "tier": "free",
+        "features": [
+          "Standard Audio (160kbps)"
+        ]
+      },
+      "stats": {
+        "quizzesCompleted": 31,
+        "correctAnswers": 142,
+        "accuracyPercent": 78,
+        "songsPlayed": 210,
+        "playlistsCreated": 3,
+        "timeListenedMinutes": 1200,
+        "friendsReferred": 2
+      },
+      "createdAt": "2025-01-20T14:30:00Z",
+      "passwordHint": "demo123",
+      "role": "user"
+    },
+    {
+      "id": "usr_music_listener_03",
+      "username": "NeonRider",
+      "displayName": "Marcus Vance",
+      "email": "marcus@tunequest.app",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80",
+      "level": 12,
+      "tunePoints": 3450,
+      "streak": 19,
+      "referralCode": "TUNE-N3O8N9",
+      "favoriteGenres": [
+        "Synthwave",
+        "Cyber Electro"
+      ],
+      "subscription": {
+        "tier": "vip",
+        "features": [
+          "Hi-Fi Audio (320kbps)",
+          "Zero Ads",
+          "Double TunePoints"
+        ]
+      },
+      "stats": {
+        "quizzesCompleted": 98,
+        "correctAnswers": 440,
+        "accuracyPercent": 91,
+        "songsPlayed": 890,
+        "playlistsCreated": 12,
+        "timeListenedMinutes": 4500,
+        "friendsReferred": 9
+      },
+      "createdAt": "2024-11-10T08:00:00Z",
+      "passwordHint": "demo123",
+      "role": "vip_user"
+    }
+  ],
+  "signUpSchema": {
+    "fields": [
+      "fullName",
+      "email",
+      "password",
+      "confirmPassword",
+      "referralCode",
+      "favoriteGenres"
+    ],
+    "defaultStartingTunePoints": 0,
+    "referralBonusTunePoints": 50,
+    "initialLevel": 1,
+    "initialStreak": 1
+  }
+}

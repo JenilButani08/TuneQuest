@@ -1,0 +1,220 @@
+[
+  {
+    "id": "art-arijit",
+    "name": "Arijit Singh",
+    "avatarImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&auto=format&fit=crop&q=80",
+    "bio": "The undisputed voice of modern Indian romance, renowned for heartfelt emotive depth and timeless ballads.",
+    "genres": [
+      "Bollywood Romantic",
+      "Sufi",
+      "Indian Classical"
+    ],
+    "monthlyListeners": 42000000,
+    "followers": 18900000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-31",
+      "song-soulmate",
+      "song-darkhaast"
+    ],
+    "albumIds": []
+  },
+  {
+    "id": "art-anuv",
+    "name": "Anuv Jain",
+    "avatarImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Indie singer-songwriter whose acoustic storytelling and ukulele anthems have captured millions of hearts.",
+    "genres": [
+      "Indian Indie",
+      "Acoustic",
+      "Folk Pop"
+    ],
+    "monthlyListeners": 11000000,
+    "followers": 4950000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-arz-kiya-hai"
+    ],
+    "albumIds": []
+  },
+  {
+    "id": "art-weeknd",
+    "name": "The Weeknd",
+    "avatarImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Grammy-winning visionary shaping the sound of modern dark synthwave, R&B, and pop.",
+    "genres": [
+      "Synthwave Pop",
+      "R&B",
+      "Electropop"
+    ],
+    "monthlyListeners": 108000000,
+    "followers": 48600000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-60",
+      "song-timeless",
+      "song-after-hours"
+    ],
+    "albumIds": []
+  },
+  {
+    "id": "art-edsheeran",
+    "name": "Ed Sheeran",
+    "avatarImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Global acoustic pop titan whose loop-pedal performances and stadium anthems dominate world charts.",
+    "genres": [
+      "Pop",
+      "Acoustic Pop"
+    ],
+    "monthlyListeners": 84000000,
+    "followers": 37800000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-63",
+      "song-64"
+    ],
+    "albumIds": []
+  },
+  {
+    "id": "art-justinbieber",
+    "name": "Justin Bieber",
+    "avatarImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Global pop phenomenon with countless diamond records and iconic vocal collaborations.",
+    "genres": [
+      "Pop",
+      "R&B"
+    ],
+    "monthlyListeners": 73000000,
+    "followers": 32850000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-76"
+    ],
+    "albumIds": []
+  },
+  {
+    "id": "art-alan-walker",
+    "name": "Alan Walker",
+    "avatarImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Norwegian producer and DJ whose signature hoodie mask and melodic electronic sound captivated billions worldwide.",
+    "genres": [
+      "EDM",
+      "Electro Pop"
+    ],
+    "monthlyListeners": 32000000,
+    "followers": 19500000,
+    "isFollowed": true,
+    "topSongIds": [
+      "song-faded"
+    ],
+    "albumIds": [
+      "alb-different-world"
+    ]
+  },
+  {
+    "id": "art-alec-benjamin",
+    "name": "Alec Benjamin",
+    "avatarImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Self-made singer-songwriter crafting cinematic pop stories with heartfelt lyrics and distinctive high vocals.",
+    "genres": [
+      "Indie Pop",
+      "Folk Pop"
+    ],
+    "monthlyListeners": 18000000,
+    "followers": 8200000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-let-me-down-slowly"
+    ],
+    "albumIds": [
+      "alb-narrated-for-you"
+    ]
+  },
+  {
+    "id": "art-maneskin",
+    "name": "Måneskin",
+    "avatarImage": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Grammy-nominated Italian rock band that took the world by storm with explosive live energy and modern glam rock swagger.",
+    "genres": [
+      "Rock",
+      "Glam Rock"
+    ],
+    "monthlyListeners": 22000000,
+    "followers": 9400000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-beggin"
+    ],
+    "albumIds": [
+      "alb-chosen"
+    ]
+  },
+  {
+    "id": "art-aditya-rikhari",
+    "name": "Aditya Rikhari",
+    "avatarImage": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Indie singer-songwriter whose raw voice and soul-touching lyrics have made him one of Indian indie’s most prominent voices.",
+    "genres": [
+      "Indie Pop",
+      "Acoustic"
+    ],
+    "monthlyListeners": 8500000,
+    "followers": 3200000,
+    "isFollowed": true,
+    "topSongIds": [
+      "song-sahiba"
+    ],
+    "albumIds": [
+      "alb-sahiba"
+    ]
+  },
+  {
+    "id": "art-talwiinder",
+    "name": "Talwiinder",
+    "avatarImage": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Enigmatic masked Punjabi indie pioneer known for futuristic synths, haunting falsettos, and chart-topping viral hooks.",
+    "genres": [
+      "Punjabi Indie Pop",
+      "Alternative"
+    ],
+    "monthlyListeners": 7900000,
+    "followers": 2800000,
+    "isFollowed": true,
+    "topSongIds": [
+      "song-khayaal"
+    ],
+    "albumIds": [
+      "alb-khayaal"
+    ]
+  },
+  {
+    "id": "art-maanu",
+    "name": "Maanu",
+    "avatarImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80",
+    "bannerImage": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1200&auto=format&fit=crop&q=80",
+    "bio": "Pakistani indie singer-producer exploring the borders of R&B, hip-hop, and lush Coke Studio arrangements.",
+    "genres": [
+      "Pakistani Indie",
+      "R&B"
+    ],
+    "monthlyListeners": 4100000,
+    "followers": 1200000,
+    "isFollowed": false,
+    "topSongIds": [
+      "song-jhol"
+    ],
+    "albumIds": [
+      "alb-cs-pk-15"
+    ]
+  }
+]

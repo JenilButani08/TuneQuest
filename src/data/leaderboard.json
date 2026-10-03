@@ -1,0 +1,310 @@
+{
+  "weekly": [
+    {
+      "rank": 1,
+      "userId": "usr-101",
+      "username": "AriaSynapse",
+      "displayName": "Aria V.",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80",
+      "level": 24,
+      "quizScore": 480,
+      "tunePoints": 1420,
+      "streak": 21,
+      "badge": "Grand Master"
+    },
+    {
+      "rank": 2,
+      "userId": "usr-102",
+      "username": "BeatArchitect",
+      "displayName": "Marcus B.",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80",
+      "level": 19,
+      "quizScore": 450,
+      "tunePoints": 1290,
+      "streak": 15,
+      "badge": "Virtuoso"
+    },
+    {
+      "rank": 3,
+      "userId": "usr-103",
+      "username": "NeonDiver",
+      "displayName": "Elena K.",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+      "level": 16,
+      "quizScore": 420,
+      "tunePoints": 1180,
+      "streak": 12,
+      "badge": "Prodigy"
+    },
+    {
+      "rank": 4,
+      "userId": "usr-104",
+      "username": "VinylVagabond",
+      "displayName": "Julian S.",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80",
+      "level": 14,
+      "quizScore": 390,
+      "tunePoints": 1050,
+      "streak": 9
+    },
+    {
+      "rank": 5,
+      "userId": "usr_music_explorer_01",
+      "username": "MusicExplorer",
+      "displayName": "Alex Rivers",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+      "level": 7,
+      "quizScore": 360,
+      "tunePoints": 940,
+      "streak": 7,
+      "isCurrentUser": true
+    },
+    {
+      "rank": 6,
+      "userId": "usr-105",
+      "username": "SonicAlchemist",
+      "displayName": "Chloe T.",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=120&auto=format&fit=crop&q=80",
+      "level": 12,
+      "quizScore": 340,
+      "tunePoints": 910,
+      "streak": 6
+    },
+    {
+      "rank": 7,
+      "userId": "usr-106",
+      "username": "SubBassPilot",
+      "displayName": "David R.",
+      "avatarUrl": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=120&auto=format&fit=crop&q=80",
+      "level": 11,
+      "quizScore": 320,
+      "tunePoints": 860,
+      "streak": 5
+    },
+    {
+      "rank": 8,
+      "userId": "usr-107",
+      "username": "LoFiSorcerer",
+      "displayName": "Maya N.",
+      "avatarUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=120&auto=format&fit=crop&q=80",
+      "level": 10,
+      "quizScore": 300,
+      "tunePoints": 810,
+      "streak": 4
+    },
+    {
+      "rank": 9,
+      "userId": "usr-108",
+      "username": "RhythmGuru",
+      "displayName": "Tariq A.",
+      "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80",
+      "level": 9,
+      "quizScore": 280,
+      "tunePoints": 750,
+      "streak": 8
+    },
+    {
+      "rank": 10,
+      "userId": "usr-109",
+      "username": "SynthGeek88",
+      "displayName": "Oliver H.",
+      "avatarUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&auto=format&fit=crop&q=80",
+      "level": 8,
+      "quizScore": 260,
+      "tunePoints": 690,
+      "streak": 3
+    }
+  ],
+  "monthly": [
+    {
+      "rank": 1,
+      "userId": "usr-101",
+      "username": "AriaSynapse",
+      "displayName": "Aria V.",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80",
+      "level": 24,
+      "quizScore": 1840,
+      "tunePoints": 5200,
+      "streak": 28,
+      "badge": "Grand Master"
+    },
+    {
+      "rank": 2,
+      "userId": "usr-103",
+      "username": "NeonDiver",
+      "displayName": "Elena K.",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+      "level": 16,
+      "quizScore": 1620,
+      "tunePoints": 4700,
+      "streak": 24,
+      "badge": "Prodigy"
+    },
+    {
+      "rank": 3,
+      "userId": "usr-102",
+      "username": "BeatArchitect",
+      "displayName": "Marcus B.",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80",
+      "level": 19,
+      "quizScore": 1550,
+      "tunePoints": 4300,
+      "streak": 18,
+      "badge": "Virtuoso"
+    },
+    {
+      "rank": 4,
+      "userId": "usr-110",
+      "username": "HarmonicQueen",
+      "displayName": "Zoe M.",
+      "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80",
+      "level": 15,
+      "quizScore": 1410,
+      "tunePoints": 3950,
+      "streak": 14
+    },
+    {
+      "rank": 5,
+      "userId": "usr-104",
+      "username": "VinylVagabond",
+      "displayName": "Julian S.",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80",
+      "level": 14,
+      "quizScore": 1330,
+      "tunePoints": 3700,
+      "streak": 12
+    },
+    {
+      "rank": 6,
+      "userId": "usr_music_explorer_01",
+      "username": "MusicExplorer",
+      "displayName": "Alex Rivers",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+      "level": 7,
+      "quizScore": 1240,
+      "tunePoints": 3420,
+      "streak": 7,
+      "isCurrentUser": true
+    },
+    {
+      "rank": 7,
+      "userId": "usr-105",
+      "username": "SonicAlchemist",
+      "displayName": "Chloe T.",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=120&auto=format&fit=crop&q=80",
+      "level": 12,
+      "quizScore": 1190,
+      "tunePoints": 3200,
+      "streak": 10
+    }
+  ],
+  "all-time": [
+    {
+      "rank": 1,
+      "userId": "usr-111",
+      "username": "QuantumBeethoven",
+      "displayName": "Viktor C.",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80",
+      "level": 32,
+      "quizScore": 9400,
+      "tunePoints": 24500,
+      "streak": 114,
+      "badge": "Immortal"
+    },
+    {
+      "rank": 2,
+      "userId": "usr-101",
+      "username": "AriaSynapse",
+      "displayName": "Aria V.",
+      "avatarUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80",
+      "level": 24,
+      "quizScore": 7800,
+      "tunePoints": 19800,
+      "streak": 45,
+      "badge": "Grand Master"
+    },
+    {
+      "rank": 3,
+      "userId": "usr-112",
+      "username": "BassTitan",
+      "displayName": "Lucas D.",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80",
+      "level": 22,
+      "quizScore": 6900,
+      "tunePoints": 17400,
+      "streak": 38,
+      "badge": "Legend"
+    },
+    {
+      "rank": 4,
+      "userId": "usr-102",
+      "username": "BeatArchitect",
+      "displayName": "Marcus B.",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80",
+      "level": 19,
+      "quizScore": 5600,
+      "tunePoints": 14200,
+      "streak": 29
+    },
+    {
+      "rank": 18,
+      "userId": "usr_music_explorer_01",
+      "username": "MusicExplorer",
+      "displayName": "Alex Rivers",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+      "level": 7,
+      "quizScore": 1240,
+      "tunePoints": 8420,
+      "streak": 7,
+      "isCurrentUser": true
+    }
+  ],
+  "friends": [
+    {
+      "rank": 1,
+      "userId": "usr-103",
+      "username": "NeonDiver",
+      "displayName": "Elena K.",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+      "level": 16,
+      "quizScore": 420,
+      "tunePoints": 1180,
+      "streak": 12,
+      "badge": "Prodigy"
+    },
+    {
+      "rank": 2,
+      "userId": "usr_music_explorer_01",
+      "username": "MusicExplorer",
+      "displayName": "Alex Rivers",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
+      "level": 7,
+      "quizScore": 360,
+      "tunePoints": 940,
+      "streak": 7,
+      "isCurrentUser": true
+    },
+    {
+      "rank": 3,
+      "userId": "usr-105",
+      "username": "SonicAlchemist",
+      "displayName": "Chloe T.",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=120&auto=format&fit=crop&q=80",
+      "level": 12,
+      "quizScore": 340,
+      "tunePoints": 910,
+      "streak": 6
+    },
+    {
+      "rank": 4,
+      "userId": "usr-108",
+      "username": "RhythmGuru",
+      "displayName": "Tariq A.",
+      "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80",
+      "level": 9,
+      "quizScore": 280,
+      "tunePoints": 750,
+      "streak": 8
+    }
+  ]
+}

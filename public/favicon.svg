@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <rect width="100" height="100" rx="28" fill="#08080D"/>
+  <rect x="2" y="2" width="96" height="96" rx="26" stroke="url(#g1)" stroke-width="2" stroke-opacity="0.4"/>
+  <!-- Diamond Quest Core with Music Wave -->
+  <path d="M50 16 L78 50 L50 84 L22 50 Z" fill="url(#g1)" opacity="0.15" />
+  <path d="M50 24 L70 50 L50 76 L30 50 Z" stroke="url(#g1)" stroke-width="3" fill="none" filter="url(#glow)"/>
+  <!-- Stylized Note + Lightning Play Accent -->
+  <circle cx="43" cy="56" r="6" fill="#06B6D4" />
+  <circle cx="57" cy="48" r="6" fill="#EC4899" />
+  <path d="M49 56 L49 36 L63 32 L63 48" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

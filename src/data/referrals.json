@@ -1,0 +1,46 @@
+{
+  "referrerBonusPoints": 100,
+  "refereeBonusPoints": 50,
+  "activeReferralCode": "TUNE-A7K92X",
+  "shareUrlBase": "https://tunequest.app/register?ref=",
+  "howItWorks": [
+    {
+      "step": 1,
+      "title": "Share Your Link",
+      "description": "Invite friends using your unique referral code or link."
+    },
+    {
+      "step": 2,
+      "title": "Friend Signs Up",
+      "description": "They get +50 TunePoints instantly upon registration."
+    },
+    {
+      "step": 3,
+      "title": "Earn +100 TP",
+      "description": "You receive +100 TunePoints as soon as their account is verified."
+    }
+  ],
+  "recentReferrals": [
+    {
+      "id": "ref-1",
+      "friendName": "Samira Khan",
+      "status": "Completed",
+      "date": "2025-02-24",
+      "pointsEarned": 100
+    },
+    {
+      "id": "ref-2",
+      "friendName": "David Chen",
+      "status": "Completed",
+      "date": "2025-02-21",
+      "pointsEarned": 100
+    },
+    {
+      "id": "ref-3",
+      "friendName": "Chloe Taylor",
+      "status": "Pending First Quiz",
+      "date": "2025-02-18",
+      "pointsEarned": 100
+    }
+  ]
+}

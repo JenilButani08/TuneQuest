@@ -1,0 +1,316 @@
+{
+  "brand": {
+    "name": "TuneQuest",
+    "shortName": "TQ",
+    "tagline": "Listen. Play. Earn. Unlock.",
+    "subTagline": "The gamified music streaming platform where knowledge is rewarded."
+  },
+  "navLinks": [
+    {
+      "label": "Explore Music",
+      "href": "/home"
+    },
+    {
+      "label": "Trivia Quizzes",
+      "href": "/quiz"
+    },
+    {
+      "label": "TunePoints Rewards",
+      "href": "/rewards"
+    },
+    {
+      "label": "Invite Friends",
+      "href": "/referrals"
+    }
+  ],
+  "hero": {
+    "badge": "Interactive Music Streaming Platform",
+    "headlinePrefix": "Stream the music you love.",
+    "headlineHighlight": "Earn rewards",
+    "headlineSuffix": "for what you know.",
+    "description": "TuneQuest turns listening into an engaging adventure. Explore curated synthwave, lo-fi, and chill beats, prove your ear in live audio trivia, stack daily streaks, and redeem TunePoints for VIP perks.",
+    "ctaPrimary": "Start Listening Free",
+    "ctaSecondary": "Try Live Trivia",
+    "supportingNote": "Free forever • No credit card required • Instant lossless streaming",
+    "stats": [
+      {
+        "value": "10 TP",
+        "label": "per correct answer"
+      },
+      {
+        "value": "100 TP",
+        "label": "per friend referred"
+      },
+      {
+        "value": "7-Day",
+        "label": "streak bonuses"
+      },
+      {
+        "value": "320kbps",
+        "label": "high-fidelity audio"
+      }
+    ]
+  },
+  "featuredTrack": {
+    "id": "song-31",
+    "title": "Kesariya (Film Version)",
+    "artist": "Arijit Singh, Pritam",
+    "album": "Brahmāstra",
+    "duration": 268,
+    "durationFormatted": "04:28",
+    "genre": "Bollywood Romantic",
+    "coverImage": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop&q=80",
+    "audioUrl": "/audio/tunequest_songs/Kesariya_-_Film_Version___Brahmāstra___Ranbir___Alia___Pritam___Arijit___Amitabh(256k).mp3",
+    "triviaSnippet": "Full 256kbps master track from Brahmāstra, composed by Pritam with lyrics by Amitabh Bhattacharya.",
+    "bitrate": "256 kbps High-Definition Studio Audio"
+  },
+  "previewTracks": [
+    {
+      "id": "song-31",
+      "title": "Kesariya (Film Version)",
+      "artist": "Arijit Singh, Pritam",
+      "genre": "Bollywood Romantic",
+      "duration": 268,
+      "durationFormatted": "04:28",
+      "coverImage": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop&q=80",
+      "audioUrl": "/audio/tunequest_songs/Kesariya_-_Film_Version___Brahmāstra___Ranbir___Alia___Pritam___Arijit___Amitabh(256k).mp3",
+      "trivia": "Full studio master audio with Arijit Singh’s heartfelt vocals"
+    },
+    {
+      "id": "song-faded",
+      "title": "Faded",
+      "artist": "Alan Walker",
+      "genre": "EDM / Electro Pop",
+      "duration": 212,
+      "durationFormatted": "03:32",
+      "coverImage": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?w=800&auto=format&fit=crop&q=80",
+      "audioUrl": "/audio/tunequest_songs/Alan_Walker_-_Faded(256k).mp3",
+      "trivia": "3.5B+ views global electronic masterpiece in full 256kbps quality"
+    },
+    {
+      "id": "song-60",
+      "title": "Starboy",
+      "artist": "The Weeknd ft. Daft Punk",
+      "genre": "Electro Pop / R&B",
+      "duration": 230,
+      "durationFormatted": "03:50",
+      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+      "audioUrl": "/audio/tunequest_songs/The_Weeknd_-_Starboy_ft._Daft_Punk__Official_Video__ft._Daft_Punk(256k).mp3",
+      "trivia": "Full master recording produced with legendary French electronic duo Daft Punk"
+    },
+    {
+      "id": "song-63",
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "genre": "Pop",
+      "duration": 233,
+      "durationFormatted": "03:53",
+      "coverImage": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&auto=format&fit=crop&q=80",
+      "audioUrl": "/audio/tunequest_songs/Ed_Sheeran_-_Shape_of_You(256k).mp3",
+      "trivia": "Full diamond-certified master track in crystal clear 256k quality"
+    }
+  ],
+  "interactiveQuizQuestions": [
+    {
+      "id": "q1",
+      "trackTitle": "Neon Odyssey",
+      "trackArtist": "Solaris Wave",
+      "question": "Which analog synthesizer gives this synthwave anthem its signature retro warmth?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yamaha DX7 (1983 Digital FM)"
+        },
+        {
+          "id": "b",
+          "text": "Roland Juno-60 (1982 Analog Chorus)"
+        },
+        {
+          "id": "c",
+          "text": "Moog Minimoog Model D (1970 Monophonic)"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Spot on! The Roland Juno-60 with its built-in stereo chorus defined the iconic 80s synth sound.",
+      "rewardPoints": 10
+    },
+    {
+      "id": "q2",
+      "trackTitle": "Midnight Reverie",
+      "trackArtist": "Luna Eclipse",
+      "question": "In lo-fi beat production, what technique produces the characteristic vinyl wobble effect?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tape flutter & wow pitch modulation"
+        },
+        {
+          "id": "b",
+          "text": "Aggressive vocal auto-tune"
+        },
+        {
+          "id": "c",
+          "text": "Extreme digital distortion clipping"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanation": "Correct! Wow and flutter emulate uneven cassette motor speeds, delivering that nostalgic lo-fi warmth.",
+      "rewardPoints": 10
+    },
+    {
+      "id": "q3",
+      "trackTitle": "Quantum Pulse",
+      "trackArtist": "Kroma Sector",
+      "question": "What standard tempo (BPM) range anchors high-energy electro and French touch tracks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "75 – 85 BPM"
+        },
+        {
+          "id": "b",
+          "text": "124 – 130 BPM"
+        },
+        {
+          "id": "c",
+          "text": "170 – 180 BPM"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanation": "Exactly! 124–130 BPM is the legendary four-on-the-floor sweet spot for driving electro house.",
+      "rewardPoints": 10
+    }
+  ],
+  "features": [
+    {
+      "id": "feat-1",
+      "icon": "Headphones",
+      "badge": "Lossless Audio",
+      "title": "Curated Music Streaming",
+      "description": "Hand-selected synthwave, lo-fi beats, and global chill. Listen with synchronized song trivia snippets that teach you music history as you stream."
+    },
+    {
+      "id": "feat-2",
+      "icon": "Award",
+      "badge": "Live Trivia",
+      "title": "Interactive Audio Challenges",
+      "description": "Test your ear against the clock! Identify instruments, guess artists, and spot iconic chord progressions to climb leaderboard rankings."
+    },
+    {
+      "id": "feat-3",
+      "icon": "Coins",
+      "badge": "TunePoints Economy",
+      "title": "Verified Point Rewards",
+      "description": "Every correct answer earns +10 TP. Maintain daily streaks for bonus multipliers, and redeem points for VIP passes and custom profile flairs."
+    },
+    {
+      "id": "feat-4",
+      "icon": "Gift",
+      "badge": "Referrals",
+      "title": "Earn Together with Friends",
+      "description": "Share your unique referral code. Your friend gets +50 TP welcome bonus, and you earn +100 TP credited directly to your verified wallet."
+    }
+  ],
+  "rewardsCalculator": {
+    "title": "How Many TunePoints Can You Earn?",
+    "subtitle": "Calculate your potential monthly points and see what perks you can unlock.",
+    "defaults": {
+      "quizzesPerDay": 3,
+      "streakDays": 7,
+      "friendsReferred": 2
+    },
+    "perQuizPoints": 10,
+    "perStreakBonus": 50,
+    "perFriendPoints": 100,
+    "tiers": [
+      {
+        "id": "tier-1",
+        "threshold": 100,
+        "name": "1-Day VIP Pass",
+        "perk": "Ad-free streaming + 320kbps FLAC unlocked"
+      },
+      {
+        "id": "tier-2",
+        "threshold": 300,
+        "name": "Custom Profile Flare",
+        "perk": "Exclusive trivia master badge & avatar frame"
+      },
+      {
+        "id": "tier-3",
+        "threshold": 500,
+        "name": "7-Day VIP Pass",
+        "perk": "Full lossless tier + unlimited skips for a week"
+      },
+      {
+        "id": "tier-4",
+        "threshold": 1000,
+        "name": "30-Day VIP Pass",
+        "perk": "Full month of premium access with priority challenge entry"
+      }
+    ]
+  },
+  "communityReviews": [
+    {
+      "id": "rev-1",
+      "name": "Marcus Vance",
+      "handle": "@synthmarcus",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "comment": "I've discovered so many underground synthwave gems here, and answering quizzes on my morning commute is genuinely addictive.",
+      "level": "Level 8",
+      "points": "1,680 TP"
+    },
+    {
+      "id": "rev-2",
+      "name": "Elena Rostova",
+      "handle": "@elenalofi",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "comment": "Redeemed my first 7-day VIP pass purely from 2 weeks of streak bonuses. It feels so satisfying when music streaming gives back.",
+      "level": "Level 11",
+      "points": "2,450 TP"
+    },
+    {
+      "id": "rev-3",
+      "name": "David Chen",
+      "handle": "@dchen_beats",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "comment": "Invited 3 friends from my music production discord and earned 300 TP instantly. The audio quality is crystal clear.",
+      "level": "Level 6",
+      "points": "920 TP"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is TuneQuest free to stream?",
+      "answer": "Yes! TuneQuest is completely free to listen. You can explore our curated library of tracks, play music quizzes, and earn TunePoints without spending anything."
+    },
+    {
+      "question": "How do TunePoints work?",
+      "answer": "You earn 10 TunePoints for every correct trivia question you answer. You also earn daily streak bonuses for playing consecutive days, plus 100 TunePoints for every friend who joins using your referral code."
+    },
+    {
+      "question": "What can I redeem my TunePoints for?",
+      "answer": "Points can be redeemed in the Rewards Store for VIP passes (ad-free, 320kbps lossless streaming), custom avatar badges, and priority trivia challenge entry."
+    },
+    {
+      "question": "Can I invite friends and get rewards?",
+      "answer": "Absolutely! Share your unique referral code from your profile or the Referrals page. When your friend registers, they receive 50 TunePoints and you receive 100 TunePoints."
+    }
+  ],
+  "footer": {
+    "copyright": "© 2026 TuneQuest. All rights reserved. Royalty-free demo music and educational trivia.",
+    "links": [
+      {
+        "label": "Terms of Service",
+        "href": "/terms"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "Open Web App",
+        "href": "/home"
+      }
+    ]
+  }
+}
