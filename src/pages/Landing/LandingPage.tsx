@@ -3,8 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import {
-  Play,
-  Pause,
   Sparkles,
   Coins,
   Flame,
@@ -18,8 +16,6 @@ import {
   CheckCircle2,
   XCircle,
   HelpCircle,
-  Volume2,
-  Disc3,
   ChevronDown,
   Calculator,
   Users,
@@ -31,7 +27,6 @@ import { Badge } from '../../components/ui/Badge';
 import { Card } from '../../components/ui/Card';
 import { useAuthStore } from '../../store/authStore';
 import { useThemeStore } from '../../store/themeStore';
-import { usePlayerStore } from '../../store/playerStore';
 import { useUIStore } from '../../store/uiStore';
 import { LoginRequiredModal } from '../../components/auth/LoginRequiredModal';
 
@@ -41,14 +36,8 @@ import landingData from '../../data/landingData.json';
 export const LandingPage: React.FC = () => {
   const { isAuthenticated } = useAuthStore();
   const { resolvedTheme, setTheme } = useThemeStore();
-  const { playSong, isPlaying, pause, currentSong } = usePlayerStore();
   const { openLoginRequiredModal } = useUIStore();
   const navigate = useNavigate();
-
-  // Active Preview Track State
-  const [selectedTrackIndex, setSelectedTrackIndex] = useState(0);
-  const activeTrack = landingData.previewTracks[selectedTrackIndex] || landingData.previewTracks[0];
-  const isThisPlaying = isPlaying && currentSong?.id === activeTrack.id;
 
   // Interactive Quiz State
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
@@ -68,50 +57,6 @@ export const LandingPage: React.FC = () => {
   // Toggle theme
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
-  };
-
-  // Play / Pause preview track
-  const handleTogglePlay = (track: typeof activeTrack, index: number) => {
-    setSelectedTrackIndex(index);
-    if (!isAuthenticated) {
-      openLoginRequiredModal({
-        title: 'Sign in to continue',
-        message: 'You need to sign in or create an account to listen to music.',
-      });
-      return;
-    }
-    if (isPlaying && currentSong?.id === track.id) {
-      pause();
-    } else {
-      playSong(
-        {
-          id: track.id,
-          title: track.title,
-          artist: track.artist,
-          album: 'TuneQuest Spotlight',
-          coverImage: track.coverImage,
-          audioUrl: track.audioUrl,
-          duration: track.duration,
-          genre: track.genre,
-          artistId: 'art-1',
-          albumId: 'alb-1',
-          releaseDate: '2025-01-01',
-        },
-        landingData.previewTracks.map((t) => ({
-          id: t.id,
-          title: t.title,
-          artist: t.artist,
-          album: 'TuneQuest Spotlight',
-          coverImage: t.coverImage,
-          audioUrl: t.audioUrl,
-          duration: t.duration,
-          genre: t.genre,
-          artistId: 'art-1',
-          albumId: 'alb-1',
-          releaseDate: '2025-01-01',
-        }))
-      );
-    }
   };
 
   // Handle Interactive Quiz Choice
@@ -253,15 +198,14 @@ export const LandingPage: React.FC = () => {
         </div>
       </header>
 
-      {/* 2. MAIN EDITORIAL HERO WITH LIVE AUDIO & VINYL SHOWCASE */}
+      {/* 2. MAIN EDITORIAL HERO */}
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-16 lg:space-y-24">
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left Column: Headline & Action Triggers (7 cols) */}
+        <section className="max-w-4xl mx-auto text-center space-y-8 py-4 sm:py-8">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="lg:col-span-7 space-y-6 text-left"
+            className="space-y-6"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
@@ -274,12 +218,12 @@ export const LandingPage: React.FC = () => {
               {landingData.hero.headlineSuffix}
             </h1>
 
-            <p className="text-base sm:text-lg text-text-secondary max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">
               {landingData.hero.description}
             </p>
 
             {/* CTAs (Section 30) */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <Button
                 variant="primary"
                 size="lg"
@@ -315,10 +259,10 @@ export const LandingPage: React.FC = () => {
             </p>
 
             {/* Quick Hero Metric Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-border">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-border max-w-2xl mx-auto">
               {landingData.hero.stats.map((stat) => (
-                <div key={stat.label} className="p-2.5 rounded-xl bg-surface border border-border">
-                  <span className="text-sm sm:text-base font-extrabold text-primary block">
+                <div key={stat.label} className="p-3 rounded-2xl bg-surface border border-border shadow-soft-sm">
+                  <span className="text-base sm:text-lg font-extrabold text-primary block">
                     {stat.value}
                   </span>
                   <span className="text-[11px] text-text-muted mt-0.5 block truncate">
@@ -326,130 +270,6 @@ export const LandingPage: React.FC = () => {
                   </span>
                 </div>
               ))}
-            </div>
-          </motion.div>
-
-          {/* Right Column: Interactive Vinyl & Live Music Player Card (5 cols) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.45, delay: 0.08 }}
-            className="lg:col-span-5"
-          >
-            <div className="bg-surface border border-border rounded-3xl p-5 sm:p-6 shadow-soft-md space-y-4 text-left relative overflow-hidden">
-              {/* Header inside player card */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
-                    <Music className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-text-muted">
-                      Spotlight Player
-                    </h3>
-                    <p className="text-xs text-text-primary font-semibold">
-                      {activeTrack.genre} • High Fidelity
-                    </p>
-                  </div>
-                </div>
-
-                {/* Animated Equalizer Wave Bars */}
-                <div className="flex items-end gap-1 h-5 px-2 py-1 rounded-lg bg-surface-secondary">
-                  <span
-                    className={`w-1 rounded-full bg-primary transition-all ${
-                      isThisPlaying ? 'h-4 animate-bounce' : 'h-1.5'
-                    }`}
-                  />
-                  <span
-                    className={`w-1 rounded-full bg-primary transition-all [animation-delay:-0.2s] ${
-                      isThisPlaying ? 'h-5 animate-bounce' : 'h-3'
-                    }`}
-                  />
-                  <span
-                    className={`w-1 rounded-full bg-primary transition-all [animation-delay:-0.4s] ${
-                      isThisPlaying ? 'h-3 animate-bounce' : 'h-2'
-                    }`}
-                  />
-                </div>
-              </div>
-
-              {/* Vinyl Artwork Showcase with interactive rotation */}
-              <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-border bg-surface-secondary shadow-sm group">
-                <img
-                  src={activeTrack.coverImage}
-                  alt={activeTrack.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Overlay with spinning disc animation when playing */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end justify-between p-4">
-                  <div className="text-white min-w-0 pr-4">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-white/80">
-                      Now Auditioning
-                    </span>
-                    <h4 className="text-base font-bold truncate">{activeTrack.title}</h4>
-                    <p className="text-xs text-white/80 truncate">{activeTrack.artist}</p>
-                  </div>
-
-                  {/* Play/Pause Button - Restricted for guests (Section 3, 21) */}
-                  <button
-                    onClick={() => handleTogglePlay(activeTrack, selectedTrackIndex)}
-                    className="w-12 h-12 rounded-full bg-primary hover:bg-primary-hover text-white flex items-center justify-center shadow-soft-md cursor-pointer transition-transform active:scale-95 flex-shrink-0"
-                    aria-label={
-                      !isAuthenticated
-                        ? 'Sign In to Listen'
-                        : isThisPlaying
-                        ? 'Pause preview'
-                        : 'Play preview'
-                    }
-                    title={!isAuthenticated ? 'Sign In to Listen' : undefined}
-                  >
-                    {!isAuthenticated ? (
-                      <span className="text-[10px] font-bold text-center px-1 leading-tight">
-                        Sign In
-                      </span>
-                    ) : isThisPlaying ? (
-                      <Pause className="w-5 h-5 fill-current" />
-                    ) : (
-                      <Play className="w-5 h-5 fill-current ml-0.5" />
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {/* Trivia snippet embedded in track */}
-              <div className="p-3 rounded-xl bg-surface-secondary border border-border text-xs text-text-secondary leading-snug">
-                <span className="font-bold text-text-primary">Song Trivia: </span>
-                {activeTrack.trivia}
-              </div>
-
-              {/* Interactive track switcher pills */}
-              <div>
-                <p className="text-[11px] font-semibold text-text-muted mb-2">
-                  Click to switch live audition track:
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {landingData.previewTracks.map((track, idx) => (
-                    <button
-                      key={track.id}
-                      onClick={() => handleTogglePlay(track, idx)}
-                      className={`p-2 rounded-xl border text-xs text-left transition-all cursor-pointer flex items-center gap-2 ${
-                        selectedTrackIndex === idx
-                          ? 'bg-primary/10 border-primary text-primary font-bold shadow-soft-sm'
-                          : 'bg-surface-secondary hover:bg-border/60 border-border text-text-secondary'
-                      }`}
-                    >
-                      <span className="w-5 text-center font-mono text-[10px] text-text-muted">
-                        0{idx + 1}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-xs">{track.title}</p>
-                        <p className="truncate text-[10px] text-text-muted">{track.artist}</p>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
             </div>
           </motion.div>
         </section>
