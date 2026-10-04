@@ -112,14 +112,18 @@ export const QuizResultPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Action Buttons: PLAY AGAIN, BACK TO QUIZZES, VIEW LEADERBOARD */}
+        {/* Action Buttons: Play Again, View Wallet, Back to Dashboard */}
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           <Button variant="primary" size="md" onClick={handlePlayAgain} glow>
             <RotateCcw className="w-4 h-4 mr-2" /> Play Again
           </Button>
 
-          <Button variant="secondary" size="md" onClick={() => navigate('/quiz')}>
-            Back to Quizzes
+          <Button variant="points" size="md" onClick={() => navigate('/rewards')}>
+            <Coins className="w-4 h-4 mr-2" /> View Wallet
+          </Button>
+
+          <Button variant="secondary" size="md" onClick={() => navigate('/home')}>
+            Back to Dashboard
           </Button>
 
           <Link to="/leaderboard">

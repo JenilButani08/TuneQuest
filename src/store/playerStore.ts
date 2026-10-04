@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { Song } from '../types';
 import { proceduralAudio } from '../utils/audioSynth';
 import { musicService } from '../services/music/musicService';
+import { getStorageItem, setStorageItem, STORAGE_KEYS } from '../utils/storage';
 
 interface PlayerState {
   currentSong: Song | null;
@@ -73,6 +74,16 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
 
     if (newQueue) {
       set({ queue: newQueue });
+    }
+
+    // Persist to localStorage recently played
+    try {
+      const storedRecent = getStorageItem<Song[]>(STORAGE_KEYS.RECENTLY_PLAYED, []);
+      const updatedRecent = [song, ...storedRecent.filter((s) => s.id !== song.id)].slice(0, 10);
+      setStorageItem(STORAGE_KEYS.RECENTLY_PLAYED, updatedRecent);
+      set({ history: updatedRecent });
+    } catch (e) {
+      console.warn('Recently played store notice:', e);
     }
 
     set({

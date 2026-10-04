@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, ShieldCheck, ArrowRight, Sparkles, Loader2 } from 'lucide-react';
 import { Input } from '../../components/ui/Input';
@@ -12,13 +12,19 @@ export const LoginPage: React.FC = () => {
   const redirectTarget = searchParams.get('redirect') || '/home';
   const refCode = searchParams.get('ref') || '';
 
-  const [email, setEmail] = useState('explorer@tunequest.app');
-  const [password, setPassword] = useState('TuneQuestDemo2026!');
+  const [email, setEmail] = useState('demo@tunequest.com');
+  const [password, setPassword] = useState('demo123');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
 
-  const { login, isLoading, error, clearError } = useAuthStore();
+  const { login, isLoading, error, clearError, isAuthenticated } = useAuthStore();
   const { addToast } = useUIStore();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/home', { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,14 +40,16 @@ export const LoginPage: React.FC = () => {
     }
   };
 
-  const handleQuickDemoLogin = async () => {
+  const handleQuickDemoLogin = async (demoEmail: string, demoPass: string) => {
+    setEmail(demoEmail);
+    setPassword(demoPass);
     clearError();
-    const success = await login({ email: 'explorer@tunequest.app' });
+    const success = await login({ email: demoEmail, password: demoPass });
     if (success) {
       addToast({
         type: 'success',
         title: 'Demo Session Active',
-        message: 'Loaded profile: Alex Rivers (1,240 TP).',
+        message: `Signed in as ${demoEmail}`,
       });
       navigate(redirectTarget);
     }
@@ -67,25 +75,38 @@ export const LoginPage: React.FC = () => {
         </div>
 
         {/* Demo Fast Login Banner */}
-        <div className="p-3.5 rounded-2xl bg-surface-secondary border border-border mb-5 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+        <div className="p-3.5 rounded-2xl bg-surface-secondary border border-border mb-5 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+          <div className="flex items-center gap-2.5 w-full sm:w-auto">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
               <Sparkles className="w-4 h-4" />
             </div>
             <div className="text-left">
-              <p className="text-xs font-semibold text-text-primary">Demo Account</p>
-              <p className="text-[11px] text-text-secondary">Level 7 • 1,240 TP ready</p>
+              <p className="text-xs font-semibold text-text-primary">Demo Accounts</p>
+              <p className="text-[11px] text-text-secondary">Instant login ready</p>
             </div>
           </div>
-          <Button
-            variant="secondary"
-            size="sm"
-            onClick={handleQuickDemoLogin}
-            disabled={isLoading}
-            className="text-xs font-medium"
-          >
-            Quick Demo
-          </Button>
+          <div className="flex items-center gap-1.5 w-full sm:w-auto">
+            <Button
+              variant="secondary"
+              size="sm"
+              type="button"
+              onClick={() => handleQuickDemoLogin('demo@tunequest.com', 'demo123')}
+              disabled={isLoading}
+              className="text-xs font-medium flex-1 sm:flex-initial"
+            >
+              demo123
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              type="button"
+              onClick={() => handleQuickDemoLogin('explorer@tunequest.app', 'TuneQuestDemo2026!')}
+              disabled={isLoading}
+              className="text-xs font-medium flex-1 sm:flex-initial"
+            >
+              Alex (1,240 TP)
+            </Button>
+          </div>
         </div>
 
         {error && (

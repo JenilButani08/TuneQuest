@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import { QuizQuestion, QuizCategory, QuizResult } from '../types';
 import { quizService } from '../services/quiz/quizService';
 import { proceduralAudio } from '../utils/audioSynth';
+import { useWalletStore } from './walletStore';
+import { useAuthStore } from './authStore';
 
 interface QuizState {
   attemptId: string | null;
@@ -126,6 +128,15 @@ export const useQuizStore = create<QuizState>((set, get) => ({
       set({ isSubmittingQuiz: true, isTimerActive: false });
 
       const finalResult = await quizService.completeQuiz(attemptId);
+      
+      // Sync stores with newly awarded TunePoints and stats
+      try {
+        useWalletStore.getState().fetchWalletData();
+        useAuthStore.getState().checkAuth();
+      } catch (e) {
+        console.warn('Store sync error:', e);
+      }
+
       set({
         result: finalResult,
         isSubmittingQuiz: false,

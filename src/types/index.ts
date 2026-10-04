@@ -4,29 +4,33 @@ export type SubscriptionTier = 'free' | 'premium' | 'premium_expiring' | 'expire
 
 export interface User {
   id: string;
+  fullName?: string;
   username: string;
   displayName: string;
   email: string;
+  password?: string;
   avatarUrl: string;
+  avatar?: string;
+  bio?: string;
   level: number;
   xp: number;
-  xpToNextLevel: number;
+  xpToNextLevel?: number;
   tunePoints: number;
   streak: number;
-  streakActiveToday: boolean;
-  streakCalendar: {
+  streakActiveToday?: boolean;
+  streakCalendar?: {
     day: string;
     dayShort: string;
     completed: boolean;
     isToday: boolean;
   }[];
   favoriteGenres: string[];
-  subscription: {
+  subscription?: {
     tier: SubscriptionTier;
     expiresAt?: string;
     features: string[];
   };
-  stats: {
+  stats?: {
     quizzesCompleted: number;
     correctAnswers: number;
     accuracyPercent: number;
@@ -36,7 +40,10 @@ export interface User {
     friendsReferred?: number;
   };
   referralCode: string;
+  referredBy?: string | null;
+  premiumDiscount?: number;
   createdAt: string;
+  updatedAt?: string;
 }
 
 export interface Song {
@@ -198,6 +205,7 @@ export type TransactionType =
 
 export interface PointTransaction {
   id: string;
+  userId?: string;
   type: TransactionType;
   amount: number; // positive for earned, negative for spent
   description: string;

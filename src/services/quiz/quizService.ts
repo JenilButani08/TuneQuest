@@ -1,13 +1,11 @@
 import { QuizCategory, QuizQuestion, QuizAttempt, QuizResult, QuizCategoryType } from '../../types';
 import { mockQuizCategories, mockQuestions, mockDailyChallengeQuestions } from '../../mock/quizzes';
-import { mockCurrentUser } from '../../mock/users';
 import { rewardService } from '../rewards/rewardService';
-import { apiClient } from '../api/apiClient';
+import { authService } from '../auth/authService';
+import { POINTS } from '../../utils/storage';
 
-const IS_DEMO_MODE = import.meta.env.VITE_DEMO_MODE !== 'false';
-
-// Active quiz attempts tracked on mock "backend"
-const activeServerAttempts = new Map<string, {
+// Active quiz attempts tracked locally
+const activeAttempts = new Map<string, {
   attempt: QuizAttempt;
   correctAnswersMap: Map<string, string>;
   explanationsMap: Map<string, string>;
@@ -15,27 +13,25 @@ const activeServerAttempts = new Map<string, {
 
 class QuizService {
   public async getCategories(): Promise<QuizCategory[]> {
-    if (IS_DEMO_MODE) {
-      await new Promise((r) => setTimeout(r, 100));
-      return [...mockQuizCategories];
-    }
-    return await apiClient.get<QuizCategory[]>('/quizzes/categories');
+    return mockQuizCategories.map((c) => ({
+      ...c,
+      questionCount: 10,
+      rewardPoints: 100,
+    }));
   }
 
   public async getCategory(id: QuizCategoryType): Promise<QuizCategory | null> {
-    if (IS_DEMO_MODE) {
-      return mockQuizCategories.find((c) => c.id === id) || null;
-    }
-    return await apiClient.get<QuizCategory>(`/quizzes/categories/${id}`);
+    const found = mockQuizCategories.find((c) => c.id === id);
+    if (!found) return null;
+    return {
+      ...found,
+      questionCount: 10,
+      rewardPoints: 100,
+    };
   }
 
   /**
-   * Initializes a quiz session and returns sanitized questions
-   * Security architecture: Correct answers remain on backend and are never sent to client upfront!
-  /**
-   * Initializes a quiz session and returns sanitized questions
-   * Security architecture: Correct answers remain on backend and are never sent to client upfront!
-   * Requirement: Strictly 5 questions per session, dynamically randomized every single time, with user preferences support.
+   * Initializes a 10-question quiz session with randomized questions
    */
   public async startQuiz(categoryId: QuizCategoryType | 'daily' | string, userPreferences?: string[]): Promise<{
     attemptId: string;
@@ -43,49 +39,51 @@ class QuizService {
     questions: QuizQuestion[];
     timeLimitSeconds: number;
   }> {
-    if (IS_DEMO_MODE) {
-      await new Promise((r) => setTimeout(r, 200));
-      const attemptId = `att_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
-      
-      let candidatePool: QuizQuestion[] = [];
+    await new Promise((r) => setTimeout(r, 150));
+    const currentUser = await authService.getCurrentUser();
+    const attemptId = `att_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
 
-      if (categoryId === 'user-preferences') {
-        const preferences = (userPreferences && userPreferences.length > 0)
+    let candidatePool: QuizQuestion[] = [];
+
+    if (categoryId === 'user-preferences') {
+      const preferences =
+        userPreferences && userPreferences.length > 0
           ? userPreferences
-          : (mockCurrentUser.favoriteGenres || ['Bollywood', 'Indie', 'Punjabi', 'Pop', 'Synthwave']);
-        
-        // Find questions matching any user preference keyword in question, options, or explanation
-        const prefMatches = mockQuestions.filter((q) => {
-          const content = `${q.question} ${q.explanation || ''} ${q.options.map(o => o.text).join(' ')}`.toLowerCase();
-          return preferences.some((pref) => content.includes(pref.toLowerCase().trim()));
-        });
+          : currentUser?.favoriteGenres || ['Bollywood', 'Indie', 'Punjabi', 'Pop', 'Synthwave'];
 
-        // Mix preference matches with general questions if pool is smaller than 10
-        const otherQuestions = mockQuestions.filter((q) => !prefMatches.some((pm) => pm.id === q.id));
-        candidatePool = [...prefMatches, ...otherQuestions];
-      } else if (categoryId === 'daily') {
-        candidatePool = [...mockDailyChallengeQuestions, ...mockQuestions];
-      } else {
-        const catFiltered = mockQuestions.filter((q) => q.categoryId === categoryId);
-        candidatePool = catFiltered.length > 0 ? catFiltered : mockQuestions;
-      }
+      // Find questions matching any user preference keyword
+      const prefMatches = mockQuestions.filter((q) => {
+        const content = `${q.question} ${q.explanation || ''} ${q.options.map((o) => o.text).join(' ')}`.toLowerCase();
+        return preferences.some((pref) => content.includes(pref.toLowerCase().trim()));
+      });
 
-      // DYNAMIC SHUFFLE: Randomize every single time user starts a quiz
-      const shuffled = [...candidatePool].sort(() => Math.random() - 0.5);
+      const otherQuestions = mockQuestions.filter((q) => !prefMatches.some((pm) => pm.id === q.id));
+      candidatePool = [...prefMatches, ...otherQuestions];
+    } else if (categoryId === 'daily') {
+      candidatePool = [...mockDailyChallengeQuestions, ...mockQuestions];
+    } else {
+      const catFiltered = mockQuestions.filter((q) => q.categoryId === categoryId);
+      const otherQuestions = mockQuestions.filter((q) => q.categoryId !== categoryId);
+      candidatePool = [...catFiltered, ...otherQuestions];
+    }
 
-      // STRICT LIMIT: Exactly 5 questions per quiz session
-      const rawQuestions = shuffled.slice(0, 5);
+    // Dynamic shuffle every single time
+    const shuffled = [...candidatePool].sort(() => Math.random() - 0.5);
 
-      const category: QuizCategory = categoryId === 'daily'
+    // EXACTLY 10 questions per quiz session
+    const rawQuestions = shuffled.slice(0, 10);
+
+    const category: QuizCategory =
+      categoryId === 'daily'
         ? {
             id: 'trending-music' as QuizCategoryType,
             name: "Today's Daily Challenge",
-            description: "5 curated questions. Maintain your streak and unlock +50 TunePoints!",
+            description: '10 curated questions. Test your ears, keep your streak alive, and earn up to 100 TunePoints!',
             iconName: 'Sparkles',
             accentColor: '#8B5CF6',
-            questionCount: 5,
-            rewardPoints: 50,
-            rewardXp: 25,
+            questionCount: 10,
+            rewardPoints: 100,
+            rewardXp: 50,
             timeLimitSeconds: 30,
             difficulty: 'Medium' as const,
             badge: 'Daily Streak',
@@ -94,174 +92,191 @@ class QuizService {
         ? {
             id: 'user-preferences' as QuizCategoryType,
             name: 'My Preferences Gauntlet',
-            description: '5 fresh questions tailored to your favorite genres and artists. Dynamic & shuffled every round!',
+            description: '10 fresh questions tailored to your favorite genres and artists. Dynamic & shuffled every round!',
             iconName: 'Sparkles',
             accentColor: '#F59E0B',
-            questionCount: 5,
-            rewardPoints: 50,
-            rewardXp: 30,
+            questionCount: 10,
+            rewardPoints: 100,
+            rewardXp: 50,
             timeLimitSeconds: 30,
             difficulty: 'Medium' as const,
-            badge: '★ Personalized For You',
+            badge: 'Personalized For You',
           }
         : {
             ...(mockQuizCategories.find((c) => c.id === categoryId) || mockQuizCategories[0]),
-            questionCount: 5,
-            rewardPoints: 50,
+            questionCount: 10,
+            rewardPoints: 100,
           };
 
-      // Sanitize questions for frontend: strip correctOptionId to prevent cheat inspection
-      const sanitizedQuestions: QuizQuestion[] = rawQuestions.map((q) => ({
-        id: q.id,
-        categoryId: q.categoryId,
-        question: q.question,
-        snippet: q.snippet,
-        albumArtwork: q.albumArtwork,
-        audioPreviewUrl: q.audioPreviewUrl,
-        options: q.options,
-      }));
+    // Sanitize questions for frontend: strip correctOptionId to prevent cheat inspection
+    const sanitizedQuestions: QuizQuestion[] = rawQuestions.map((q) => ({
+      id: q.id,
+      categoryId: q.categoryId,
+      question: q.question,
+      snippet: q.snippet,
+      albumArtwork: q.albumArtwork,
+      audioPreviewUrl: q.audioPreviewUrl,
+      options: q.options,
+    }));
 
-      // Store authoritative answer keys on the mock server
-      const correctAnswersMap = new Map<string, string>();
-      const explanationsMap = new Map<string, string>();
-      rawQuestions.forEach((q) => {
-        if (q.correctOptionId) {
-          correctAnswersMap.set(q.id, q.correctOptionId);
-        }
-        if (q.explanation) {
-          explanationsMap.set(q.id, q.explanation);
-        }
-      });
+    // Store authoritative answer keys locally for this attempt
+    const correctAnswersMap = new Map<string, string>();
+    const explanationsMap = new Map<string, string>();
+    rawQuestions.forEach((q) => {
+      if (q.correctOptionId) {
+        correctAnswersMap.set(q.id, q.correctOptionId);
+      } else if (q.options[0]?.id) {
+        correctAnswersMap.set(q.id, q.options[0].id);
+      }
+      if (q.explanation) {
+        explanationsMap.set(q.id, q.explanation);
+      }
+    });
 
-      const attempt: QuizAttempt = {
-        attemptId,
-        quizId: categoryId,
-        categoryId: category.id,
-        userId: mockCurrentUser.id,
-        startedAt: new Date().toISOString(),
-        timeLimitSeconds: category.timeLimitSeconds,
-        totalQuestions: sanitizedQuestions.length,
-        currentQuestionIndex: 0,
-        questions: sanitizedQuestions,
-        answers: [],
-      };
+    const attempt: QuizAttempt = {
+      attemptId,
+      quizId: categoryId,
+      categoryId: category.id,
+      userId: currentUser?.id || 'usr_music_explorer_01',
+      startedAt: new Date().toISOString(),
+      timeLimitSeconds: category.timeLimitSeconds,
+      totalQuestions: sanitizedQuestions.length,
+      currentQuestionIndex: 0,
+      questions: sanitizedQuestions,
+      answers: [],
+    };
 
-      activeServerAttempts.set(attemptId, {
-        attempt,
-        correctAnswersMap,
-        explanationsMap,
-      });
+    activeAttempts.set(attemptId, {
+      attempt,
+      correctAnswersMap,
+      explanationsMap,
+    });
 
-      return {
-        attemptId,
-        category,
-        questions: sanitizedQuestions,
-        timeLimitSeconds: category.timeLimitSeconds,
-      };
-    }
-
-    return await apiClient.post('/quizzes/start', { categoryId });
+    return {
+      attemptId,
+      category,
+      questions: sanitizedQuestions,
+      timeLimitSeconds: category.timeLimitSeconds,
+    };
   }
 
   /**
-   * Submits an answer for validation
+   * Submits an answer for the current question
    */
   public async submitAnswer(
     attemptId: string,
     questionId: string,
     selectedOptionId: string,
     timeTakenSeconds: number
-  ): Promise<{ isAccepted: boolean }> {
-    if (IS_DEMO_MODE) {
-      const serverSession = activeServerAttempts.get(attemptId);
-      if (serverSession) {
-        serverSession.attempt.answers.push({
-          questionId,
-          selectedOptionId,
-          answeredAt: new Date().toISOString(),
-          timeTakenSeconds,
-        });
-      }
-      return { isAccepted: true };
+  ): Promise<{ isAccepted: boolean; isCorrect: boolean }> {
+    const session = activeAttempts.get(attemptId);
+    let isCorrect = false;
+
+    if (session) {
+      session.attempt.answers.push({
+        questionId,
+        selectedOptionId,
+        answeredAt: new Date().toISOString(),
+        timeTakenSeconds,
+      });
+
+      const correctOptId = session.correctAnswersMap.get(questionId);
+      isCorrect = selectedOptionId === correctOptId;
     }
 
-    return await apiClient.post(`/quizzes/${attemptId}/answer`, {
-      questionId,
-      selectedOptionId,
-      timeTakenSeconds,
-    });
+    return { isAccepted: true, isCorrect };
   }
 
   /**
-   * Server validates attempt, calculates points, commits wallet transaction, and returns results
+   * Validates attempt, calculates points, commits wallet transaction, and returns results
    */
   public async completeQuiz(attemptId: string): Promise<QuizResult> {
-    if (IS_DEMO_MODE) {
-      await new Promise((r) => setTimeout(r, 400));
-      const serverSession = activeServerAttempts.get(attemptId);
+    await new Promise((r) => setTimeout(r, 350));
+    const session = activeAttempts.get(attemptId);
+    const currentUser = await authService.getCurrentUser();
 
-      let score = 0;
-      let totalQuestions = 5;
-      const breakdown: QuizResult['breakdown'] = [];
+    let score = 0;
+    const totalQuestions = 10;
+    const breakdown: QuizResult['breakdown'] = [];
 
-      if (serverSession) {
-        const { attempt, correctAnswersMap, explanationsMap } = serverSession;
-        totalQuestions = attempt.questions.length;
+    if (session) {
+      const { attempt, correctAnswersMap, explanationsMap } = session;
 
-        attempt.questions.forEach((q) => {
-          const userAnswerRecord = attempt.answers.find((a) => a.questionId === q.id);
-          const selectedOptionId = userAnswerRecord ? userAnswerRecord.selectedOptionId : '';
-          const correctOptionId = correctAnswersMap.get(q.id) || q.options[0]?.id || '';
-          
-          const isCorrect = selectedOptionId === correctOptionId;
-          if (isCorrect) score++;
+      attempt.questions.forEach((q) => {
+        const userAnswerRecord = attempt.answers.find((a) => a.questionId === q.id);
+        const selectedOptionId = userAnswerRecord ? userAnswerRecord.selectedOptionId : '';
+        const correctOptionId = correctAnswersMap.get(q.id) || q.options[0]?.id || '';
 
-          const userOpt = q.options.find((o) => o.id === selectedOptionId);
-          const correctOpt = q.options.find((o) => o.id === correctOptionId);
+        const isCorrect = selectedOptionId === correctOptionId;
+        if (isCorrect) score++;
 
-          breakdown.push({
-            questionId: q.id,
-            question: q.question,
-            userAnswer: userOpt ? userOpt.text : 'Time expired / No answer',
-            correctAnswer: correctOpt ? correctOpt.text : 'Option A',
-            isCorrect,
-            explanation: explanationsMap.get(q.id) || 'Music challenge trivia knowledge base verified.',
-          });
+        const userOpt = q.options.find((o) => o.id === selectedOptionId);
+        const correctOpt = q.options.find((o) => o.id === correctOptionId);
+
+        breakdown.push({
+          questionId: q.id,
+          question: q.question,
+          userAnswer: userOpt ? userOpt.text : 'Time expired / No answer',
+          correctAnswer: correctOpt ? correctOpt.text : 'Option A',
+          isCorrect,
+          explanation: explanationsMap.get(q.id) || 'Trivia verified from TuneQuest Music Library.',
         });
-      }
-
-      const pointsEarned = score * 10;
-      const xpEarned = (score * 5) + (totalQuestions - score); // +5 per correct, +1 for participation
-
-      // Commit transaction to wallet service atomically
-      if (pointsEarned > 0) {
-        await rewardService.recordPointReward(
-          pointsEarned,
-          `Quiz Challenge Completed (${score}/${totalQuestions} correct)`
-        );
-      }
-
-      const updatedWallet = await rewardService.getWallet();
-
-      const result: QuizResult = {
-        attemptId,
-        quizTitle: serverSession?.attempt.categoryId === 'trending-music' ? "Daily Music Challenge" : "Music Trivia Challenge",
-        score,
-        totalQuestions,
-        accuracy: Math.round((score / totalQuestions) * 100),
-        tunePointsEarned: pointsEarned,
-        xpEarned,
-        streakDays: mockCurrentUser.streak + 1,
-        newTunePointsBalance: updatedWallet.balance,
-        correctAnswersCount: score,
-        incorrectAnswersCount: totalQuestions - score,
-        breakdown,
-      };
-
-      return result;
+      });
     }
 
-    return await apiClient.post<QuizResult>(`/quizzes/${attemptId}/complete`);
+    const pointsEarned = score * POINTS.QUIZ_CORRECT;
+    const xpEarned = score * 5 + (totalQuestions - score);
+
+    // Commit transaction & points to user in localStorage
+    if (pointsEarned > 0 && currentUser) {
+      await rewardService.recordPointReward(
+        pointsEarned,
+        `Quiz Challenge Completed (${score}/10 correct)`,
+        'QUIZ_REWARD',
+        currentUser.id
+      );
+    }
+
+    // Update user quiz stats and streak in localStorage
+    if (currentUser) {
+      const updatedStats = {
+        ...currentUser.stats,
+        quizzesCompleted: (currentUser.stats?.quizzesCompleted || 0) + 1,
+        correctAnswers: (currentUser.stats?.correctAnswers || 0) + score,
+        accuracyPercent: Math.round(
+          (((currentUser.stats?.correctAnswers || 0) + score) /
+            (((currentUser.stats?.quizzesCompleted || 0) + 1) * 10)) *
+            100
+        ),
+      };
+
+      await authService.updateProfile(currentUser.id, {
+        stats: updatedStats as any,
+        xp: (currentUser.xp || 0) + xpEarned,
+      });
+    }
+
+    const updatedWallet = await rewardService.getWallet();
+
+    const result: QuizResult = {
+      attemptId,
+      quizTitle:
+        session?.attempt.categoryId === 'trending-music'
+          ? 'Daily Music Challenge'
+          : 'Music Trivia Challenge',
+      score,
+      totalQuestions,
+      accuracy: Math.round((score / totalQuestions) * 100),
+      tunePointsEarned: pointsEarned,
+      xpEarned,
+      streakDays: (currentUser?.streak || 7) + 1,
+      newTunePointsBalance: updatedWallet.balance,
+      correctAnswersCount: score,
+      incorrectAnswersCount: totalQuestions - score,
+      breakdown,
+    };
+
+    return result;
   }
 }
 

@@ -41,7 +41,7 @@ type RegisterFormData = z.infer<typeof registerSchema>;
 export const RegisterPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { register: registerUser, isLoading, error: authError, clearError } = useAuthStore();
+  const { register: registerUser, isLoading, error: authError, clearError, isAuthenticated } = useAuthStore();
   const { addToast } = useUIStore();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -54,6 +54,12 @@ export const RegisterPage: React.FC = () => {
   } | null>(null);
 
   const refParam = searchParams.get('ref') || '';
+
+  useEffect(() => {
+    if (isAuthenticated && !signupSuccessData) {
+      navigate('/home', { replace: true });
+    }
+  }, [isAuthenticated, navigate, signupSuccessData]);
 
   const {
     register,

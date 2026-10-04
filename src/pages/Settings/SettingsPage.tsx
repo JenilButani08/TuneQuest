@@ -17,6 +17,7 @@ import {
   Download,
   Eye,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/authStore';
 import { useUIStore } from '../../store/uiStore';
 import { useThemeStore, ThemePreference } from '../../store/themeStore';
@@ -24,8 +25,10 @@ import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Card } from '../../components/ui/Card';
 import { jsonStorageService } from '../../data/jsonStorageService';
+import { authService } from '../../services/auth/authService';
 
 export const SettingsPage: React.FC = () => {
+  const navigate = useNavigate();
   const { user, updateUser, logout } = useAuthStore();
   const { addToast } = useUIStore();
   const { theme, setTheme, resolvedTheme } = useThemeStore();
@@ -52,9 +55,18 @@ export const SettingsPage: React.FC = () => {
   };
 
   const handleResetDemoData = () => {
-    if (confirm('Reset demo state to initial defaults?')) {
-      sessionStorage.clear();
-      window.location.reload();
+    if (
+      confirm(
+        'Reset all TuneQuest demo data?\n\nThis will remove locally stored demo users, points, transactions and preferences.'
+      )
+    ) {
+      authService.resetAllDemoData();
+      addToast({
+        type: 'info',
+        title: 'Demo Data Reset',
+        message: 'Local TuneQuest demo data has been reset to defaults.',
+      });
+      navigate('/login');
     }
   };
 
@@ -331,17 +343,29 @@ export const SettingsPage: React.FC = () => {
 
       {/* Danger Zone */}
       <div className="p-6 sm:p-7 rounded-2xl bg-danger/5 border border-danger/20 space-y-3">
-        <h3 className="text-base font-bold text-danger flex items-center gap-2">
-          <Trash2 className="w-4 h-4" /> Account Session
-        </h3>
+        <div className="flex items-center justify-between">
+          <h3 className="text-base font-bold text-danger flex items-center gap-2">
+            <Trash2 className="w-4 h-4" /> Account Session
+          </h3>
+          <span className="text-[10px] font-bold text-text-muted bg-surface-secondary px-2 py-0.5 rounded border border-border">
+            Demo Only
+          </span>
+        </div>
         <p className="text-xs text-text-secondary">
-          Reset local simulation data or log out of this device.
+          Reset local simulation demo data or sign out of this device.
         </p>
         <div className="flex flex-wrap gap-2.5 pt-1">
           <Button variant="outline" size="sm" onClick={handleResetDemoData}>
             Reset Demo Data
           </Button>
-          <Button variant="danger" size="sm" onClick={() => logout()}>
+          <Button
+            variant="danger"
+            size="sm"
+            onClick={async () => {
+              await logout();
+              navigate('/login');
+            }}
+          >
             Sign Out
           </Button>
         </div>

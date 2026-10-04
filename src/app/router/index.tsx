@@ -77,6 +77,18 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: '/dashboard',
+        element: <Navigate to="/home" replace />,
+      },
+      {
+        path: '/wallet',
+        element: <Navigate to="/rewards" replace />,
+      },
+      {
+        path: '/music',
+        element: <Navigate to="/browse" replace />,
+      },
+      {
         path: '/search',
         element: <SearchPage />,
       },

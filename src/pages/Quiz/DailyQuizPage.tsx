@@ -53,7 +53,7 @@ export const DailyQuizPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-7 gap-1.5 sm:gap-2 pt-1">
-            {user?.streakCalendar.map((item) => (
+            {(user?.streakCalendar || []).map((item) => (
               <div
                 key={item.day}
                 className={`p-2 rounded-xl text-center flex flex-col items-center justify-center border transition-all ${

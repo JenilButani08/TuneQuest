@@ -13,6 +13,7 @@ interface AuthState {
   register: (payload: RegisterPayload) => Promise<{ success: boolean; referralRewardApplied?: boolean }>;
   logout: () => Promise<void>;
   updateUser: (updated: Partial<User>) => void;
+  updateProfile: (updated: Partial<User>) => Promise<boolean>;
   clearError: () => void;
 }
 
@@ -39,7 +40,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       set({ user, isAuthenticated: true, isLoading: false });
       return true;
     } catch (err: any) {
-      set({ error: err.message || 'Login failed', isLoading: false });
+      set({ error: err.message || 'Invalid email or password.', isLoading: false });
       return false;
     }
   },
@@ -68,7 +69,22 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   updateUser: (updated) => {
     const current = get().user;
     if (current) {
-      set({ user: { ...current, ...updated } });
+      const nextUser = { ...current, ...updated };
+      set({ user: nextUser });
+      authService.updateProfile(current.id, updated).catch(() => {});
+    }
+  },
+
+  updateProfile: async (updated) => {
+    const current = get().user;
+    if (!current) return false;
+    try {
+      const updatedUser = await authService.updateProfile(current.id, updated);
+      set({ user: updatedUser });
+      return true;
+    } catch (err: any) {
+      set({ error: err.message || 'Unable to save profile.' });
+      return false;
     }
   },
 

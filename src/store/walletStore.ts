@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { Wallet, PointTransaction, Reward, RedemptionResult } from '../types';
 import { rewardService } from '../services/rewards/rewardService';
+import { useAuthStore } from './authStore';
 
 interface WalletState {
   wallet: Wallet;
@@ -17,10 +18,10 @@ interface WalletState {
 
 export const useWalletStore = create<WalletState>((set, get) => ({
   wallet: {
-    balance: 1240,
-    thisWeekEarned: 320,
-    lifetimeEarned: 8420,
-    lifetimeRedeemed: 5000,
+    balance: 0,
+    thisWeekEarned: 0,
+    lifetimeEarned: 0,
+    lifetimeRedeemed: 0,
     currencyName: 'TunePoints',
     currencySymbol: 'TP',
   },
@@ -50,6 +51,8 @@ export const useWalletStore = create<WalletState>((set, get) => ({
       const result = await rewardService.redeemReward(rewardId);
       // Refresh wallet & transactions
       await get().fetchWalletData();
+      // Also sync user in authStore so navbar and profile reflect updated points and discount
+      useAuthStore.getState().checkAuth();
       set({ isRedeeming: false });
       return result;
     } catch (err: any) {

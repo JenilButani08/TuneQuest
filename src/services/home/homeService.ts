@@ -4,6 +4,7 @@ import { mockArtists } from '../../mock/artists';
 import { mockGenres, mockActivities, GenreItem, ActivityMoodItem } from '../../mock/genres';
 import { mockAchievements } from '../../mock/achievements';
 import { mockCurrentUser } from '../../mock/users';
+import { getStorageItem, STORAGE_KEYS } from '../../utils/storage';
 
 export interface DailyChallengePreview {
   id: string;
@@ -58,10 +59,11 @@ class HomeService {
 
   public async getHomeData(user?: typeof mockCurrentUser | null): Promise<HomeData> {
     const now = Date.now();
+    const name = user?.fullName || user?.displayName;
     if (this.cache && now - this.lastFetchTime < this.CACHE_TTL) {
       return {
         ...this.cache,
-        greeting: this.getGreeting(user?.displayName),
+        greeting: this.getGreeting(name),
       };
     }
 
@@ -71,15 +73,28 @@ class HomeService {
     // Highlight top master studio tracks and global hits
     const featuredSong = mockSongs.find((s) => s.id === 'song-31') || mockSongs[0]; // Kesariya
 
-    // 6 realistic continue listening songs featuring full master studio tracks
-    const continueListening = [
-      { ...(mockSongs.find((s) => s.id === 'song-31') || mockSongs[0]), progressPercent: 64 }, // Kesariya
-      { ...(mockSongs.find((s) => s.id === 'song-faded') || mockSongs[1]), progressPercent: 88 }, // Faded
-      { ...(mockSongs.find((s) => s.id === 'song-60') || mockSongs[2]), progressPercent: 42 }, // Starboy
-      { ...(mockSongs.find((s) => s.id === 'song-64') || mockSongs[3]), progressPercent: 75 }, // Perfect
-      { ...(mockSongs.find((s) => s.id === 'song-63') || mockSongs[4]), progressPercent: 50 }, // Shape of You
-      { ...(mockSongs.find((s) => s.id === 'song-arz-kiya-hai') || mockSongs[5]), progressPercent: 30 }, // Arz Kiya Hai
-    ];
+    // Continue listening songs from localStorage recently played, or fallback to curated list
+    let continueListening: (Song & { progressPercent: number })[] = [];
+    try {
+      const recent = getStorageItem<Song[]>(STORAGE_KEYS.RECENTLY_PLAYED, []);
+      if (recent && recent.length > 0) {
+        continueListening = recent.slice(0, 6).map((s, idx) => ({
+          ...s,
+          progressPercent: Math.max(25, 90 - idx * 12),
+        }));
+      }
+    } catch {}
+
+    if (continueListening.length === 0) {
+      continueListening = [
+        { ...(mockSongs.find((s) => s.id === 'song-31') || mockSongs[0]), progressPercent: 64 }, // Kesariya
+        { ...(mockSongs.find((s) => s.id === 'song-faded') || mockSongs[1]), progressPercent: 88 }, // Faded
+        { ...(mockSongs.find((s) => s.id === 'song-60') || mockSongs[2]), progressPercent: 42 }, // Starboy
+        { ...(mockSongs.find((s) => s.id === 'song-64') || mockSongs[3]), progressPercent: 75 }, // Perfect
+        { ...(mockSongs.find((s) => s.id === 'song-63') || mockSongs[4]), progressPercent: 50 }, // Shape of You
+        { ...(mockSongs.find((s) => s.id === 'song-arz-kiya-hai') || mockSongs[5]), progressPercent: 30 }, // Arz Kiya Hai
+      ];
+    }
 
     const trending = [...mockSongs].sort((a, b) => (b.plays || 0) - (a.plays || 0)).slice(0, 12);
     const recommendations = mockSongs.slice(0, 14);

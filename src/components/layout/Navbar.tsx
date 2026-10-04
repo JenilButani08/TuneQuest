@@ -174,8 +174,8 @@ export const Navbar: React.FC = () => {
                 className="flex items-center gap-1.5 p-0.5 rounded-full hover:ring-2 hover:ring-primary/40 transition-all"
               >
                 <img
-                  src={user?.avatarUrl || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'}
-                  alt={user?.displayName || 'User Avatar'}
+                  src={user?.avatar || user?.avatarUrl || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'}
+                  alt={user?.fullName || user?.displayName || 'User Avatar'}
                   className="w-8 h-8 rounded-full object-cover border border-border"
                 />
               </button>
@@ -184,7 +184,7 @@ export const Navbar: React.FC = () => {
                 <div className="absolute right-0 mt-2 w-56 ui-dropdown rounded-2xl p-1.5 z-50 text-sm">
                   <div className="p-2.5 border-b border-border mb-1">
                     <p className="font-semibold text-text-primary leading-tight truncate">
-                      {user?.displayName || 'Alex Rivers'}
+                      {user?.fullName || user?.displayName || 'Alex Rivers'}
                     </p>
                     <p className="text-xs text-text-muted mt-0.5 truncate">
                       @{user?.username || 'MusicExplorer'}
@@ -239,7 +239,7 @@ export const Navbar: React.FC = () => {
                       onClick={() => {
                         setShowDropdown(false);
                         logout();
-                        navigate('/home');
+                        navigate('/login');
                       }}
                       className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-danger hover:bg-danger/10 transition-colors text-left font-medium"
                     >
