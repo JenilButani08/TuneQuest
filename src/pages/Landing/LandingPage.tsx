@@ -32,6 +32,8 @@ import { Card } from '../../components/ui/Card';
 import { useAuthStore } from '../../store/authStore';
 import { useThemeStore } from '../../store/themeStore';
 import { usePlayerStore } from '../../store/playerStore';
+import { useUIStore } from '../../store/uiStore';
+import { LoginRequiredModal } from '../../components/auth/LoginRequiredModal';
 
 // ALL DATA LOADED DIRECTLY FROM JSON FILE
 import landingData from '../../data/landingData.json';
@@ -40,6 +42,7 @@ export const LandingPage: React.FC = () => {
   const { isAuthenticated } = useAuthStore();
   const { resolvedTheme, setTheme } = useThemeStore();
   const { playSong, isPlaying, pause, currentSong } = usePlayerStore();
+  const { openLoginRequiredModal } = useUIStore();
   const navigate = useNavigate();
 
   // Active Preview Track State
@@ -70,6 +73,13 @@ export const LandingPage: React.FC = () => {
   // Play / Pause preview track
   const handleTogglePlay = (track: typeof activeTrack, index: number) => {
     setSelectedTrackIndex(index);
+    if (!isAuthenticated) {
+      openLoginRequiredModal({
+        title: 'Sign in to continue',
+        message: 'You need to sign in or create an account to listen to music.',
+      });
+      return;
+    }
     if (isPlaying && currentSong?.id === track.id) {
       pause();
     } else {
@@ -106,6 +116,13 @@ export const LandingPage: React.FC = () => {
 
   // Handle Interactive Quiz Choice
   const handleAnswerQuestion = (optId: string) => {
+    if (!isAuthenticated) {
+      openLoginRequiredModal({
+        title: 'Sign in to continue',
+        message: 'Sign in or create an account to play TuneQuest quizzes and earn TunePoints.',
+      });
+      return;
+    }
     if (selectedOptionId !== null) return;
     setSelectedOptionId(optId);
 
@@ -215,17 +232,19 @@ export const LandingPage: React.FC = () => {
             </button>
 
             {/* Log In Button */}
-            <Link to="/login">
-              <Button variant="outline" size="sm" className="font-semibold">
-                Log In
-              </Button>
-            </Link>
+            {!isAuthenticated && (
+              <Link to="/login">
+                <Button variant="outline" size="sm" className="font-semibold">
+                  Log In
+                </Button>
+              </Link>
+            )}
 
             {/* Open Web App or Register */}
             <Button
               variant="primary"
               size="sm"
-              onClick={() => navigate('/home')}
+              onClick={() => navigate(isAuthenticated ? '/dashboard' : '/register')}
               className="font-bold shadow-soft-sm"
             >
               {isAuthenticated ? 'Open Web App' : 'Get Started'} <ArrowRight className="w-4 h-4 ml-1" />
@@ -259,27 +278,36 @@ export const LandingPage: React.FC = () => {
               {landingData.hero.description}
             </p>
 
-            {/* CTAs */}
+            {/* CTAs (Section 30) */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Button
                 variant="primary"
                 size="lg"
-                onClick={() => navigate('/home')}
+                onClick={() => navigate(isAuthenticated ? '/dashboard' : '/register')}
                 className="font-bold px-7 shadow-soft-sm cursor-pointer"
               >
-                <Headphones className="w-5 h-5 mr-2" /> {landingData.hero.ctaPrimary}
+                <Headphones className="w-5 h-5 mr-2" />{' '}
+                {isAuthenticated ? 'Open Web App' : 'Start Your Journey'}
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => {
-                  const el = document.getElementById('interactive-quiz-section');
-                  el?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="font-semibold px-6 cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4 mr-2 text-warning" /> {landingData.hero.ctaSecondary}
-              </Button>
+              {!isAuthenticated ? (
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => navigate('/login')}
+                  className="font-semibold px-6 cursor-pointer"
+                >
+                  Already have an account? Sign In
+                </Button>
+              ) : (
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => navigate('/quiz')}
+                  className="font-semibold px-6 cursor-pointer"
+                >
+                  <Sparkles className="w-4 h-4 mr-2 text-warning" /> Daily Quiz
+                </Button>
+              )}
             </div>
 
             <p className="text-xs text-text-muted">
@@ -363,13 +391,24 @@ export const LandingPage: React.FC = () => {
                     <p className="text-xs text-white/80 truncate">{activeTrack.artist}</p>
                   </div>
 
-                  {/* Play/Pause Button */}
+                  {/* Play/Pause Button - Restricted for guests (Section 3, 21) */}
                   <button
                     onClick={() => handleTogglePlay(activeTrack, selectedTrackIndex)}
                     className="w-12 h-12 rounded-full bg-primary hover:bg-primary-hover text-white flex items-center justify-center shadow-soft-md cursor-pointer transition-transform active:scale-95 flex-shrink-0"
-                    aria-label={isThisPlaying ? 'Pause preview' : 'Play preview'}
+                    aria-label={
+                      !isAuthenticated
+                        ? 'Sign In to Listen'
+                        : isThisPlaying
+                        ? 'Pause preview'
+                        : 'Play preview'
+                    }
+                    title={!isAuthenticated ? 'Sign In to Listen' : undefined}
                   >
-                    {isThisPlaying ? (
+                    {!isAuthenticated ? (
+                      <span className="text-[10px] font-bold text-center px-1 leading-tight">
+                        Sign In
+                      </span>
+                    ) : isThisPlaying ? (
                       <Pause className="w-5 h-5 fill-current" />
                     ) : (
                       <Play className="w-5 h-5 fill-current ml-0.5" />
@@ -437,14 +476,30 @@ export const LandingPage: React.FC = () => {
                 </h2>
               </div>
 
-              {/* Live Points Counter */}
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-secondary border border-border w-fit">
-                <Coins className="w-4 h-4 text-warning" />
-                <span className="text-xs text-text-secondary">Demo Score:</span>
-                <span className="text-sm font-extrabold text-text-primary font-mono">
-                  {userScore} TP
-                </span>
-              </div>
+              {/* Live Points Counter / Guest Sign In to Play CTA (Section 4, 32) */}
+              {!isAuthenticated ? (
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={() =>
+                    openLoginRequiredModal({
+                      title: 'Sign in to continue',
+                      message: 'Sign in or create an account to play TuneQuest quizzes and earn TunePoints.',
+                    })
+                  }
+                  className="font-bold shadow-soft-sm"
+                >
+                  <Sparkles className="w-4 h-4 mr-1 text-warning" /> Sign In to Play
+                </Button>
+              ) : (
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-secondary border border-border w-fit">
+                  <Coins className="w-4 h-4 text-warning" />
+                  <span className="text-xs text-text-secondary">Demo Score:</span>
+                  <span className="text-sm font-extrabold text-text-primary font-mono">
+                    {userScore} TP
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Quiz Body OR Completion Celebration */}
@@ -673,10 +728,19 @@ export const LandingPage: React.FC = () => {
                 <Button
                   variant="primary"
                   size="md"
-                  onClick={() => navigate('/register')}
+                  onClick={() => {
+                    if (isAuthenticated) {
+                      navigate('/rewards');
+                    } else {
+                      openLoginRequiredModal({
+                        title: 'Sign in to continue',
+                        message: 'Sign in or create an account to redeem TuneQuest rewards and discounts.',
+                      });
+                    }
+                  }}
                   className="w-full justify-center font-bold"
                 >
-                  Start Earning Now →
+                  {isAuthenticated ? 'Go to Rewards Store →' : 'Sign In to Redeem'}
                 </Button>
               </div>
             </div>
@@ -809,6 +873,9 @@ export const LandingPage: React.FC = () => {
           ))}
         </div>
       </footer>
+
+      {/* Global Login Required Modal for guests (Section 28) */}
+      <LoginRequiredModal />
     </div>
   );
 };

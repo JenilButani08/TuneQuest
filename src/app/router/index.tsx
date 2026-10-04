@@ -37,11 +37,39 @@ import { AchievementsPage } from '../../pages/Achievements/AchievementsPage';
 import { ProfilePage } from '../../pages/Profile/ProfilePage';
 import { SettingsPage } from '../../pages/Settings/SettingsPage';
 
+import { useAuthStore } from '../../store/authStore';
+
+// Intelligent Root Route (Section 13)
+const RootRoute: React.FC = () => {
+  const { isAuthenticated, isLoading } = useAuthStore();
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+      </div>
+    );
+  }
+  return isAuthenticated ? <Navigate to="/dashboard" replace /> : <LandingPage />;
+};
+
+// Public Auth Route: redirects authenticated users to /dashboard (Section 35)
+const PublicAuthRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isAuthenticated, isLoading } = useAuthStore();
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-background">
+        <div className="w-8 h-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+      </div>
+    );
+  }
+  return isAuthenticated ? <Navigate to="/dashboard" replace /> : <>{children}</>;
+};
+
 export const router = createBrowserRouter([
   // Public Root Landing Page & Auth
   {
     path: '/',
-    element: <LandingPage />,
+    element: <RootRoute />,
   },
   {
     path: '/landing',
@@ -49,11 +77,19 @@ export const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <LoginPage />,
+    element: (
+      <PublicAuthRoute>
+        <LoginPage />
+      </PublicAuthRoute>
+    ),
   },
   {
     path: '/register',
-    element: <RegisterPage />,
+    element: (
+      <PublicAuthRoute>
+        <RegisterPage />
+      </PublicAuthRoute>
+    ),
   },
   {
     path: '/forgot-password',
@@ -68,9 +104,13 @@ export const router = createBrowserRouter([
     element: <PrivacyPage />,
   },
 
-  // Main App Shell
+  // Main App Shell - All routes strictly protected by ProtectedRoute
   {
-    element: <AppLayout />,
+    element: (
+      <ProtectedRoute>
+        <AppLayout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         path: '/home',
@@ -94,6 +134,18 @@ export const router = createBrowserRouter([
       },
       {
         path: '/browse',
+        element: <BrowsePage />,
+      },
+      {
+        path: '/discover',
+        element: <BrowsePage />,
+      },
+      {
+        path: '/playlist',
+        element: <Navigate to="/library" replace />,
+      },
+      {
+        path: '/song/:id',
         element: <BrowsePage />,
       },
       {
@@ -236,6 +288,6 @@ export const router = createBrowserRouter([
   // Fallback
   {
     path: '*',
-    element: <Navigate to="/home" replace />,
+    element: <Navigate to="/" replace />,
   },
 ]);

@@ -363,7 +363,7 @@ export const SettingsPage: React.FC = () => {
             size="sm"
             onClick={async () => {
               await logout();
-              navigate('/login');
+              navigate('/');
             }}
           >
             Sign Out

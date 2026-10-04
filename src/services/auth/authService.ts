@@ -146,14 +146,13 @@ class AuthService {
       setStorageItem(STORAGE_KEYS.TRANSACTIONS, initialTransactions);
     }
 
-    // 3. Initialize active session default if none set
-    const authState = getStorageItem<{ isAuthenticated: boolean; userId: string | null }>(STORAGE_KEYS.AUTH, {
-      isAuthenticated: true,
-      userId: DEMO_ACCOUNTS[0].id,
-    });
-    if (!localStorage.getItem(STORAGE_KEYS.AUTH)) {
-      setStorageItem(STORAGE_KEYS.AUTH, authState);
-      setStorageItem(STORAGE_KEYS.CURRENT_USER, DEMO_ACCOUNTS[0]);
+    // 3. Initialize default session state if none set (defaults to NOT authenticated)
+    if (localStorage.getItem(STORAGE_KEYS.AUTH) === null) {
+      setStorageItem(STORAGE_KEYS.AUTH, {
+        isAuthenticated: false,
+        userId: null,
+      });
+      removeStorageItem(STORAGE_KEYS.CURRENT_USER);
     }
   }
 
@@ -188,6 +187,10 @@ class AuthService {
       isAuthenticated: true,
       userId: matchedUser.id,
     });
+    try {
+      localStorage.setItem('tunequest_auth', 'true');
+      localStorage.setItem('tunequest_current_user', matchedUser.id);
+    } catch {}
 
     return matchedUser;
   }
@@ -331,6 +334,10 @@ class AuthService {
       isAuthenticated: true,
       userId: newUser.id,
     });
+    try {
+      localStorage.setItem('tunequest_auth', 'true');
+      localStorage.setItem('tunequest_current_user', newUser.id);
+    } catch {}
 
     // Also sync to jsonStorageService for unified exports
     try {
@@ -355,6 +362,10 @@ class AuthService {
       isAuthenticated: false,
       userId: null,
     });
+    try {
+      localStorage.setItem('tunequest_auth', 'false');
+      localStorage.removeItem('tunequest_current_user');
+    } catch {}
   }
 
   /**
@@ -362,17 +373,44 @@ class AuthService {
    */
   public async getCurrentUser(): Promise<User | null> {
     this.initLocalStorage();
-    const authState = getStorageItem<{ isAuthenticated: boolean; userId: string | null }>(STORAGE_KEYS.AUTH, {
-      isAuthenticated: false,
-      userId: null,
-    });
+    const rawAuth = localStorage.getItem(STORAGE_KEYS.AUTH);
+    if (!rawAuth) return null;
 
-    if (!authState.isAuthenticated || !authState.userId) {
-      return null;
+    let isAuthed = false;
+    let authUserId: string | null = null;
+    try {
+      const parsed = JSON.parse(rawAuth);
+      if (typeof parsed === 'boolean') {
+        isAuthed = parsed;
+      } else if (typeof parsed === 'object' && parsed !== null) {
+        isAuthed = !!parsed.isAuthenticated;
+        authUserId = parsed.userId || null;
+      }
+    } catch {
+      isAuthed = rawAuth === 'true';
     }
 
+    if (!isAuthed) return null;
+
+    const rawCurrent = localStorage.getItem(STORAGE_KEYS.CURRENT_USER);
+    let targetUserId = authUserId;
+    if (rawCurrent) {
+      try {
+        const parsedCurrent = JSON.parse(rawCurrent);
+        if (typeof parsedCurrent === 'string') {
+          targetUserId = parsedCurrent;
+        } else if (typeof parsedCurrent === 'object' && parsedCurrent?.id) {
+          targetUserId = parsedCurrent.id;
+        }
+      } catch {
+        targetUserId = rawCurrent;
+      }
+    }
+
+    if (!targetUserId) return null;
+
     const users = getStorageItem<User[]>(STORAGE_KEYS.USERS, DEMO_ACCOUNTS);
-    const user = users.find((u) => u.id === authState.userId);
+    const user = users.find((u) => u.id === targetUserId);
 
     if (user) {
       setStorageItem(STORAGE_KEYS.CURRENT_USER, user);

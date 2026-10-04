@@ -57,7 +57,7 @@ export const RegisterPage: React.FC = () => {
 
   useEffect(() => {
     if (isAuthenticated && !signupSuccessData) {
-      navigate('/home', { replace: true });
+      navigate('/dashboard', { replace: true });
     }
   }, [isAuthenticated, navigate, signupSuccessData]);
 
@@ -198,7 +198,7 @@ export const RegisterPage: React.FC = () => {
             <Button
               variant="primary"
               className="w-full justify-center py-3 text-sm font-semibold"
-              onClick={() => navigate('/home')}
+              onClick={() => navigate('/dashboard')}
             >
               Start Listening
             </Button>

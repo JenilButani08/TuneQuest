@@ -3,7 +3,7 @@ import { mockLeaderboardData } from '../../mock/leaderboard';
 import { mockAchievements } from '../../mock/achievements';
 import { apiClient } from '../api/apiClient';
 
-const IS_DEMO_MODE = import.meta.env.VITE_DEMO_MODE !== 'false';
+const IS_DEMO_MODE = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_DEMO_MODE) !== 'false';
 
 let runtimeAchievements = [...mockAchievements];
 
@@ -38,7 +38,7 @@ class AchievementService {
 
 class AnalyticsService {
   public trackEvent(eventName: string, properties: Record<string, any> = {}): void {
-    const isAnalyticsEnabled = import.meta.env.VITE_ENABLE_ANALYTICS === 'true';
+    const isAnalyticsEnabled = typeof import.meta !== 'undefined' && import.meta.env?.VITE_ENABLE_ANALYTICS === 'true';
     if (!isAnalyticsEnabled) {
       // In development, log event unobtrusively
       // console.debug(`[TuneQuest Analytics] ${eventName}`, properties);

@@ -5,7 +5,7 @@ import { mockAlbums } from '../../mock/albums';
 import { mockPlaylists } from '../../mock/playlists';
 import { apiClient } from '../api/apiClient';
 
-const IS_DEMO_MODE = import.meta.env.VITE_DEMO_MODE !== 'false';
+const IS_DEMO_MODE = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_DEMO_MODE) !== 'false';
 
 // In-memory working copy for dynamic updates in demo mode
 let runtimeSongs: Song[] = [...mockSongs];

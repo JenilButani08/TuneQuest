@@ -9,7 +9,7 @@ import { useUIStore } from '../../store/uiStore';
 export const LoginPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const redirectTarget = searchParams.get('redirect') || '/home';
+  const redirectTarget = searchParams.get('redirect') || '/dashboard';
   const refCode = searchParams.get('ref') || '';
 
   const [email, setEmail] = useState('demo@tunequest.com');
@@ -22,7 +22,7 @@ export const LoginPage: React.FC = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/home', { replace: true });
+      navigate('/dashboard', { replace: true });
     }
   }, [isAuthenticated, navigate]);
 

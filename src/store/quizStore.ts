@@ -4,6 +4,7 @@ import { quizService } from '../services/quiz/quizService';
 import { proceduralAudio } from '../utils/audioSynth';
 import { useWalletStore } from './walletStore';
 import { useAuthStore } from './authStore';
+import { useUIStore } from './uiStore';
 
 interface QuizState {
   attemptId: string | null;
@@ -48,6 +49,16 @@ export const useQuizStore = create<QuizState>((set, get) => ({
   userAnswers: [],
 
   startQuiz: async (categoryId, userPreferences) => {
+    // Level 2 Quiz Restriction: Guest cannot play quizzes (Section 4, 22)
+    const isAuthenticated = useAuthStore.getState().isAuthenticated;
+    if (!isAuthenticated) {
+      useUIStore.getState().openLoginRequiredModal({
+        title: 'Sign in to continue',
+        message: 'Sign in or create an account to play TuneQuest quizzes and earn TunePoints.',
+      });
+      return;
+    }
+
     set({
       attemptId: null,
       category: null,

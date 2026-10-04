@@ -15,6 +15,8 @@ interface UIState {
   isQueueOpen: boolean;
   isCreatePlaylistOpen: boolean;
   activeRedemptionReward: Reward | null;
+  isLoginRequiredModalOpen: boolean;
+  loginRequiredContext: { title?: string; message?: string } | null;
 
   // Actions
   addToast: (toast: Omit<ToastItem, 'id'>) => void;
@@ -24,6 +26,8 @@ interface UIState {
   setCreatePlaylistOpen: (open: boolean) => void;
   openRedemptionModal: (reward: Reward) => void;
   closeRedemptionModal: () => void;
+  openLoginRequiredModal: (context?: { title?: string; message?: string }) => void;
+  closeLoginRequiredModal: () => void;
 }
 
 export const useUIStore = create<UIState>((set, get) => ({
@@ -32,6 +36,8 @@ export const useUIStore = create<UIState>((set, get) => ({
   isQueueOpen: false,
   isCreatePlaylistOpen: false,
   activeRedemptionReward: null,
+  isLoginRequiredModalOpen: false,
+  loginRequiredContext: null,
 
   addToast: (toast) => {
     const id = `toast-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`;
@@ -53,4 +59,8 @@ export const useUIStore = create<UIState>((set, get) => ({
   setCreatePlaylistOpen: (open) => set({ isCreatePlaylistOpen: open }),
   openRedemptionModal: (reward) => set({ activeRedemptionReward: reward }),
   closeRedemptionModal: () => set({ activeRedemptionReward: null }),
+  openLoginRequiredModal: (context) =>
+    set({ isLoginRequiredModalOpen: true, loginRequiredContext: context || null }),
+  closeLoginRequiredModal: () =>
+    set({ isLoginRequiredModalOpen: false, loginRequiredContext: null }),
 }));

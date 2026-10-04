@@ -8,6 +8,7 @@ import { MiniPlayer } from '../music/MiniPlayer';
 import { ExpandedMobilePlayer } from '../music/ExpandedMobilePlayer';
 import { ToastContainer } from '../ui/ToastContainer';
 import { RedemptionModal } from '../rewards/RedemptionModal';
+import { LoginRequiredModal } from '../auth/LoginRequiredModal';
 import { usePlayerStore } from '../../store/playerStore';
 
 export const AppLayout: React.FC = () => {
@@ -46,6 +47,7 @@ export const AppLayout: React.FC = () => {
         {/* Global Notifications & Modals */}
         <ToastContainer />
         <RedemptionModal />
+        <LoginRequiredModal />
       </div>
     </div>
   );

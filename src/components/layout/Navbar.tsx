@@ -236,10 +236,10 @@ export const Navbar: React.FC = () => {
 
                   <div className="border-t border-border mt-1 pt-1">
                     <button
-                      onClick={() => {
+                      onClick={async () => {
                         setShowDropdown(false);
-                        logout();
-                        navigate('/login');
+                        await logout();
+                        navigate('/');
                       }}
                       className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-danger hover:bg-danger/10 transition-colors text-left font-medium"
                     >

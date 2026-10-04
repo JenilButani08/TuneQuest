@@ -4,8 +4,8 @@ import { ApiError } from '../../types';
 // Designed to connect to production Django REST Framework / FastAPI / Node backend
 // Supports HttpOnly secure cookies, SameSite protection, and CSRF tokens.
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
-const IS_DEMO_MODE = import.meta.env.VITE_DEMO_MODE !== 'false';
+const API_BASE_URL = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE_URL) || 'http://localhost:8000/api';
+const IS_DEMO_MODE = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_DEMO_MODE) !== 'false';
 
 export class ApiClient {
   private baseUrl: string;

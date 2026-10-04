@@ -3,6 +3,8 @@ import { Song } from '../types';
 import { proceduralAudio } from '../utils/audioSynth';
 import { musicService } from '../services/music/musicService';
 import { getStorageItem, setStorageItem, STORAGE_KEYS } from '../utils/storage';
+import { useAuthStore } from './authStore';
+import { useUIStore } from './uiStore';
 
 interface PlayerState {
   currentSong: Song | null;
@@ -43,7 +45,7 @@ interface PlayerState {
 let audioElement: HTMLAudioElement | null = null;
 
 const getAudioElement = () => {
-  if (typeof window === 'undefined') return null;
+  if (typeof window === 'undefined' || typeof Audio === 'undefined') return null;
   if (!audioElement) {
     audioElement = new Audio();
     audioElement.preload = 'auto';
@@ -66,6 +68,16 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   useFallbackSynth: false,
 
   playSong: (song, newQueue) => {
+    // Level 2 Player Restriction: Guest cannot play music (Section 3, 21)
+    const isAuthenticated = useAuthStore.getState().isAuthenticated;
+    if (!isAuthenticated) {
+      useUIStore.getState().openLoginRequiredModal({
+        title: 'Sign in to continue',
+        message: 'You need to sign in or create an account to listen to music.',
+      });
+      return;
+    }
+
     const audio = getAudioElement();
     const state = get();
 
@@ -120,6 +132,15 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   },
 
   resume: () => {
+    const isAuthenticated = useAuthStore.getState().isAuthenticated;
+    if (!isAuthenticated) {
+      useUIStore.getState().openLoginRequiredModal({
+        title: 'Sign in to continue',
+        message: 'You need to sign in or create an account to listen to music.',
+      });
+      return;
+    }
+
     const { currentSong, useFallbackSynth, isMuted, volume } = get();
     if (!currentSong) return;
 
@@ -139,6 +160,15 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   },
 
   togglePlay: () => {
+    const isAuthenticated = useAuthStore.getState().isAuthenticated;
+    if (!isAuthenticated) {
+      useUIStore.getState().openLoginRequiredModal({
+        title: 'Sign in to continue',
+        message: 'You need to sign in or create an account to listen to music.',
+      });
+      return;
+    }
+
     const { isPlaying } = get();
     if (isPlaying) {
       get().pause();
