@@ -9,18 +9,22 @@ import { ExpandedMobilePlayer } from '../music/ExpandedMobilePlayer';
 import { ToastContainer } from '../ui/ToastContainer';
 import { RedemptionModal } from '../rewards/RedemptionModal';
 import { LoginRequiredModal } from '../auth/LoginRequiredModal';
+import { DynamicSongBackground } from './DynamicSongBackground';
 import { usePlayerStore } from '../../store/playerStore';
 
 export const AppLayout: React.FC = () => {
   const { currentSong } = usePlayerStore();
 
   return (
-    <div className="flex min-h-screen bg-background text-text-primary font-sans antialiased transition-colors">
+    <div className="flex min-h-screen bg-background text-text-primary font-sans antialiased transition-colors relative">
+      {/* Dynamic Song Background Atmosphere */}
+      <DynamicSongBackground />
+
       {/* Desktop Left Sidebar */}
       <Sidebar />
 
       {/* Main Column */}
-      <div className="flex-1 flex flex-col min-w-0 min-h-screen relative">
+      <div className="flex-1 flex flex-col min-w-0 min-h-screen relative z-10">
         <Navbar />
 
         {/* Content Container - with dynamic bottom padding so music players never obscure page content */}

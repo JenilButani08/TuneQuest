@@ -54,10 +54,18 @@ export const ExpandedMobilePlayer: React.FC = () => {
           animate={{ y: 0 }}
           exit={{ y: '100%' }}
           transition={{ type: 'spring', damping: 28, stiffness: 260 }}
-          className="md:hidden fixed inset-0 z-50 bg-[#08080D] flex flex-col p-6 overflow-y-auto"
+          className="md:hidden fixed inset-0 z-50 bg-[#08080D] flex flex-col p-6 overflow-y-auto relative"
         >
+          {/* Subtle Ambient Background */}
+          {currentSong.coverImage && (
+            <div
+              className="absolute inset-0 bg-cover bg-center filter blur-[100px] opacity-20 pointer-events-none scale-125"
+              style={{ backgroundImage: `url(${currentSong.coverImage})` }}
+            />
+          )}
+
           {/* Top Bar */}
-          <div className="flex items-center justify-between pb-4">
+          <div className="flex items-center justify-between pb-4 relative z-10">
             <button
               onClick={() => setIsExpandedMobile(false)}
               className="p-2 -ml-2 text-slate-400 hover:text-white"

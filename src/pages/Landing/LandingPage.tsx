@@ -5,9 +5,7 @@ import confetti from 'canvas-confetti';
 import {
   Sparkles,
   Coins,
-  Flame,
   Award,
-  ShieldCheck,
   Headphones,
   ArrowRight,
   Sun,
@@ -15,12 +13,8 @@ import {
   Gift,
   CheckCircle2,
   XCircle,
-  HelpCircle,
   ChevronDown,
   Calculator,
-  Users,
-  Check,
-  Music,
 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
